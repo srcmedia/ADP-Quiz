@@ -1,0 +1,23 @@
+{
+    "title": "Is your firm one of the best places to work in accounting?",
+    "questions": [
+            {
+                "text": "Here's a question!",
+                "weight": 1
+            },
+            {
+                "text": "Here's another question!",
+                "weight": 1
+            },
+            {
+                "text": "Here's the last question!",
+                "weight": 1
+            }
+        ],
+        "results":[
+                {
+                "text": "Totally Awesome!",
+                "weight": "cool!"
+                }
+        ]
+}

@@ -1,0 +1,69 @@
+{
+    "title": "Is your firm one of the best places to work in accounting?",
+    "questions": [
+            {
+                "question": "Does your firm allow paid time off for community service activities or volunteer work?",
+                "weight": 1,
+                
+                "takeaway": "Younger staff in particular are likely to expect their employer to support charitable activities"
+            },
+            {
+                "question": "Does your firm offer telecommuting options to staff?",
+                "weight": 1,
+                "takeaway": "It's important that telecommuting options be regularly available – not just for special occasions or only some individuals."
+            },
+            {
+                "question": "Does your firm provide any fitness or wellness programs?",
+                "weight": 1,
+                
+                "takeaway": "Helping staff stay fit and healthy isn't just good for them – it can reduce sick days, and may even lead to lower insurance costs."
+            },
+            {
+                "question": "Are staff members' immediate families invited to firm events?",
+                "weight": 1,
+                
+                "takeaway": "More and more firms are reaching out to include employees' families."
+            },
+            {
+                "question": "Does your firm offer tuition reimbursement or assistance for additional degrees or credentials?",
+                "weight": 1,
+                
+                "takeaway": "Support for advanced degrees like MBAs or LLMs, and for specialty credentials are a much-appreciated part of staff development."
+            },
+            {
+                "question": "Does your firm have any formalized succession planning programs or practices?",
+                "weight": 1,
+                
+                "takeaway": "Uncertainty surrounding the future leadership of the firm – or even a department – can drive staff away."
+            },
+            {
+                "question": "Does your firm offer flexible hours or compressed work weeks as an option?",
+                "weight": 1,
+                
+                "takeaway": "Flexible hours are a cornerstone of work-life balance, that no firm can afford to ignore."
+            },
+            {
+                "question": "Does your firm offer personal development or stress management workshops, seminars or classes?",
+                "weight": 1,
+                
+                "takeaway": "Staff expect employees to help them grow, and to manage the stress of their jobs."
+            },
+            {
+                "question": "Does your firm match employee contributions to a retirement savings plans account?",
+                "weight": 1,
+                
+                "takeaway": "It's not enough to just have a retirement savings plan – staff expect their employers to help with contributions."
+            },
+            {
+                "question": "Does your firm share information on how it is doing financially with staff?",
+                "weight": 1,
+                "takeaway": "Younger generations of employees don't want to be kept in the dark about how their firm is performing."
+            }
+        ],
+        "results":[
+                {
+                "title": "You answered &quot;Yes&quot; to 0-3 out of 10",
+                "summation": "Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Here are a number of places to start! Visit us at adp.com/accountant."
+                }
+        ]
+}
