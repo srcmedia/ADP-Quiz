@@ -13,6 +13,8 @@ class Question extends Component{
             slideClass: this.props.currentSlide-1 === this.props.index ? 'card current' : 'card'
             // slideClass:
         });
+        // console.log(this.props.answered);
+
     }
 
     checkStatus(inClass){
@@ -30,36 +32,26 @@ class Question extends Component{
     }
 
     radioClick(value){
-        //Add class
-        // this.setState({slideClass: this.checkStatus("answered")});
-        this.setState((prevState)=>{return{answered: 1}});
-        //Add Tally 
-        // this.props.tallyUp(value);
+        this.props.updateStatus(this.props.index, value);
     }
 
     render(){ 
-        // let className = this.props.currentSlide-1 === this.props.index ? 'card current' : 'card';
-   
         return(
-
-            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + (this.state.answered === 1 ? ' answered' : '' )}>
+            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + (this.props.answered === 1 ? ' answered' : '' )}>
                 <h2>{this.props.text}</h2>
                 <div className="inputselect">
                     <ul>
                         <li>
-                            <input type="radio" 
-                                name={this.props.index} 
-                                value="1" 
+                            <div className={this.props.yes===1 ? 'fakeRadio--active' : 'fakeRadio'} 
                                 onClick={this.radioClick.bind(this, 1)}
-                                checked={this.props.checkedYes}
-                                ></input> 
-                                <label>Yes</label>
+                               
+                                ></div> 
+                                <label>Yes</label> 
                             </li>
                         <li>
-                            <input type="radio" 
-                                name={this.props.index}
-                                value="0" 
-                                onClick={this.radioClick.bind(this, 0)}              checked={this.props.checkedNo}></input> <label>No</label>
+                            <div className={this.props.no===1 ? 'fakeRadio--active' : 'fakeRadio'} 
+
+                                onClick={this.radioClick.bind(this, 2)}              ></div> <label>No</label> 
                             </li>
                     </ul>   
                     <div className="takeaway">
