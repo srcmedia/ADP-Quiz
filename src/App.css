@@ -259,7 +259,7 @@ h3 span{
 
 .previous:hover,
 .next:hover{
-  opacity:.7;
+  color:rgba(100,190,235,.7);
 }
 
 .previous{
@@ -335,8 +335,11 @@ h3 span{
     text-align:center;
     width:180px;
     height: 50px;
-    border-radius: none;
-    appearance: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    border:none;
+    cursor: pointer;
+
 }
 
 
@@ -356,6 +359,7 @@ h3 span{
   }
   .bluebar{
     height:142px;
+    background-size: cover;
   }
   .site-logo{
     width:180px;
@@ -370,6 +374,14 @@ h3 span{
 
   header{
     padding:15px 20px;
+    height: inherit;
+  }
+  header span{
+    font-size:9px;
+    float:right;
+  }
+  .bluebar{
+    background-size:cover;
   }
   section{
     padding:20px;
@@ -379,22 +391,27 @@ h3 span{
     color: #777777;
     letter-spacing: 0;
     line-height: 18px;
-    margin-bottom:40px;
+    font-family: Arial;
+    margin-bottom: 20px;    
   }
   
   .card,
   .card.current{
     display:block;
-    padding:20px;
+    padding:0 20px;
   }
 
-  .card h2{
+  .card h2,
+  h2{
     font-size: 26px;
     line-height: 28px;
     margin:0 auto 20px;
     width:300px;
     display:block;
     text-align: center;
+  }
+  .card ul li{
+    margin-bottom: 30px;
   }
 
   .inputselect{
@@ -407,7 +424,7 @@ h3 span{
   .counter{
     width:100%;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
   }
   .takeaway{
     width:inherit;
@@ -418,6 +435,11 @@ h3 span{
   }
   .takeaway p{
     font-size: 16px;
+    line-height: 20px;
+  }
+  .questions--displayed, 
+  .results--displayed{
+    min-height:300px;
   }
   .controllers--displayed{
     width:145px;
@@ -428,21 +450,24 @@ h3 span{
     padding:0;
     
   }
-  .resultsform{
-    padding:0;
-  }
   .results--text{
-    width:100%!important;
-    display:block;
+    width:100%;
+    padding:0;
   }
   .resultsform{
     width:100%;
     clear:left;
     display:block;
+    padding:0;
+    /* background: #f9f9f9; */
+  }
+  .results--shown{
+    display:block;
   }
   .results--shown h4{
     font-size: 26px;
     line-height: 26px;
+    font-weight:500;
   }
   .next{
     font-size: 22px;
@@ -454,7 +479,7 @@ h3 span{
     order:1;
   }
   .previous{
-    border-top:2px solid #64BEEB;
+    border-top:1px solid #64BEEB;
     border-right:none;
     margin-top:5px;
     padding:10px 0 0;
@@ -462,11 +487,15 @@ h3 span{
     width:100%;
     order:2;
     font-size:11px;
+    line-height:12px;
   }
   .site-logo{
     width:153px;
   }
   .sponsor-logo{
     height: 30px;
+  }
+  .resultsform button{
+    width:100%;
   }
 }

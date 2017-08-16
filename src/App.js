@@ -75,15 +75,11 @@ class App extends Component {
 
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
-    // (newArray[0][key][choice]===0 && newArray[0][key][choice+1]===0) ? newArray[0][key][choice] = 1 :  
-
-    console.log(newArray[0][key][choice]);
     newArray[0][key][0]=1;
     newArray[0][key][choice] = 1;
     this.setState({
       questions: newArray
     });
-    // console.log(key, choice);
   }
   
 
@@ -108,13 +104,13 @@ class App extends Component {
     return (
       <div className="wrapper">
       <header><img 
-        src={"/images/atlogo.png"}
+        src={"./images/atlogo.png"}
         className="site-logo"
         alt="Accounting Today"
         />
       
        <img
-        src={"/images/Automatic_Data_Processing.png"}
+        src={"./images/Automatic_Data_Processing.png"}
         className="sponsor-logo"
         alt="ADP"
           />
@@ -122,10 +118,6 @@ class App extends Component {
        
       </header>
       <section className="bluebar">
-        <div className="debugger">
-           <h4>Debug Window</h4> 
-           <p>Tally: {this.getTotal()}</p>
-        </div>
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
@@ -151,27 +143,27 @@ class App extends Component {
       </section>
       <section className={this.state.quizComplete === false ? 'results--hidden' : 'results--shown'}>
         <div className="results--text">
-        <h2>You scored {this.getTotal()} of {this.state.maxQuestions}</h2>
+        <h2>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h2>
         {this.getTotal() < 4 &&
-          <h4>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Here are a number of places to start! Visit us at <a href="#">adp.com/accountant</a>
+          <h4>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at <a href="#">adp.com/accountant</a>
           </h4>
         }
          {this.getTotal() < 7 && this.getTotal() > 3 &&
-          <h4>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here are a number of places to start! Visit us at <a href="#">adp.com/accountant</a>
+          <h4>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at <a href="#">adp.com/accountant</a>
           </h4>
         }
         {this.getTotal() < 10 && this.getTotal() > 6 &&
-          <h4>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here are a number of places to start! Visit us at <a href="#">adp.com/accountant</a>
+          <h4>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at <a href="#">adp.com/accountant</a>
           </h4>
         }
         {this.getTotal() === 10 &&
-          <h4>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here are a number of places to start! Visit us at  <a href="#">adp.com/accountant</a>
+          <h4>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at  <a href="#">adp.com/accountant</a>
           </h4>
         }
         </div>
 
         <div className="resultsform">
-          <h5>Fill out the form below and get tips<br/>to help you become a top firm.</h5>
+          <h5>Fill out the form below and get tips to help you become a top firm.</h5>
           <label>First Name</label>
           <input type="text"></input>
           <label>Last Name</label>
@@ -182,7 +174,7 @@ class App extends Component {
           <input type="text"></input>
           <label>Phone Number</label>
           <input type="tel"></input>
-          <button>SUBMIT</button>
+          <button>Submit</button>
         </div>
       </section>
 
