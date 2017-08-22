@@ -2,41 +2,39 @@ import React, { Component } from 'react';
 import Question from './question.js';
 import Results from './results.js';
 import questiondata from './questions.json';
+import ReactGA from 'react-ga';
+
 import './App.css';
 
-// function generateAnswers(fillState){
-//     let responseArray = [];
-//     for(let i=0;i<questiondata.questions.length;i++){
-//       responseArray.push(fillState);
-//     }
-//     console.log(responseArray);
-//     return responseArray;
-//   }
-
+ReactGA.initialize('UA-219761-62');
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      splashDisplay: false,
+      splashDisplay: true,
       title: null,
       currentquestion: 1,
       maxQuestions: 0,
       questions: this.buildQuestions(questiondata.questions),
       quizComplete: false 
     };
-
   }
   
   componentDidMount(){
     this.setState({
       title: questiondata.title,
-      maxQuestions: questiondata.questions.length,
-
+      maxQuestions: questiondata.questions.length
     });  
   }
 
-  
+  StartQuiz(){
+    this.reactClickEvent('Start');
+    this.setState((prevState)=>{
+      return {splashDisplay: false}
+    });
+  }
+
   prevClick(){
     if(this.state.currentquestion >= 1){
       let newArray = this.state.questions;
@@ -48,8 +46,6 @@ class App extends Component {
                 questions: newArray
         };
       });
-      
-      
     }
   }
 
@@ -66,10 +62,14 @@ class App extends Component {
       });
     }
     else{
+      this.reactClickEvent('Complete');
       this.setState((prevState)=>{
         return {quizComplete: true}
-      }
-    )
+      });
+      if(this.getTotal()<4)this.reactClickEvent('End Page Result 1');
+      if(this.getTotal()>3 && this.getTotal()<7)this.reactClickEvent('End Page Result 2');
+      if(this.getTotal()>6 && this.getTotal() < 10)this.reactClickEvent('End Page Result 3');
+      if(this.getTotal()==10)this.reactClickEvent('End Page Result 4');
     }
   }
 
@@ -80,6 +80,7 @@ class App extends Component {
     this.setState({
       questions: newArray
     });
+    this.reactClickEvent('question: ' + key + ' choice: ' +choice);
   }
   
 
@@ -98,6 +99,15 @@ class App extends Component {
       addedUp = addedUp + this.state.questions[0][i][1];
     }
     return addedUp;
+  }
+
+  reactClickEvent(eventLabel){
+    ReactGA.event({
+      category:'Sponsored Quiz',
+      action: 'Best Accounting Firms – ADP',
+      label: eventLabel
+    }); 
+    console.log(eventLabel);
   }
 
   render(){
@@ -121,9 +131,14 @@ class App extends Component {
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={this.state.quizComplete === true ? 'results--hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
+        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'results--hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
       </section>
-      <section className={this.state.quizComplete === false ? 'questions--displayed' : 'questions--hidden'}>
+      <section className={this.state.splashDisplay === true ? 'intro--displayed' : 'intro--hidden'}>
+        <h2></h2>
+        <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
+        <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
+      </section>
+      <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions--hidden' : 'questions--displayed'}>
         {questiondata.questions.map((obj, key)=>
           <Question 
               text={obj.question} 
@@ -143,22 +158,54 @@ class App extends Component {
       </section>
       <section className={this.state.quizComplete === false ? 'results--hidden' : 'results--shown'}>
         <div className="results--text">
-        <h2>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h2>
+        <h3>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h3>
         {this.getTotal() < 4 &&
-          <h4>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at <a href="#">adp.com/accountant</a>
-          </h4>
+          <p>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Fill out the registration form and download these practical resources to get you on the road to success:
+          <ul>
+            <li>Becoming an Employer of Choice (guide)</li>
+            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
+            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
+            <li>Fixing the Talent Management Disconnect (white paper)</li>
+            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
+          </ul>
+            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
+          </p>
         }
          {this.getTotal() < 7 && this.getTotal() > 3 &&
-          <h4>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at <a href="#">adp.com/accountant</a>
-          </h4>
+          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:
+          <ul>
+            <li>Becoming an Employer of Choice (guide)</li>
+            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
+            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
+            <li>Fixing the Talent Management Disconnect (white paper)</li>
+            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
+          </ul>
+            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
+          </p>
         }
         {this.getTotal() < 10 && this.getTotal() > 6 &&
-          <h4>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at <a href="#">adp.com/accountant</a>
-          </h4>
+          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:
+          <ul>
+            <li>Becoming an Employer of Choice (guide)</li>
+            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
+            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
+            <li>Fixing the Talent Management Disconnect (white paper)</li>
+            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
+          </ul>
+            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
+          </p>
         }
         {this.getTotal() === 10 &&
-          <h4>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Visit us at  <a href="#">adp.com/accountant</a>
-          </h4>
+          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:
+          <ul>
+            <li>Becoming an Employer of Choice (guide)</li>
+            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
+            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
+            <li>Fixing the Talent Management Disconnect (white paper)</li>
+            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
+          </ul>
+            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
+          </p>
         }
         </div>
 
@@ -178,7 +225,7 @@ class App extends Component {
         </div>
       </section>
 
-      <div className={this.state.quizComplete === false ? 'controllers--displayed' : 'controllers--hidden'}>
+      <div className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'controllers--hidden' : 'controllers--displayed'}>
         {this.state.currentquestion>1 && <a className="previous" onClick={this.prevClick.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>} <a className="next" onClick={this.nextClick.bind(this)}>Next</a>
       </div>
 
