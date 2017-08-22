@@ -114,13 +114,13 @@ class App extends Component {
     return (
       <div className="wrapper">
       <header><img 
-        src={"./images/atlogo.png"}
+        src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
         className="site-logo"
         alt="Accounting Today"
         />
       
        <img
-        src={"./images/Automatic_Data_Processing.png"}
+        src={"https://source-media-brightspot-lower.s3.amazonaws.com/39/b0/3f81867647589b47ae996bbc88d0/automatic-data-processing.png"}
         className="sponsor-logo"
         alt="ADP"
           />

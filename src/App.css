@@ -67,7 +67,7 @@ header span{
 }
 
 .bluebar{
-  background-image: url('/images/confetti-desktop.png');
+  background-image: url('https://source-media-brightspot-lower.s3.amazonaws.com/22/28/5ff5d8994384bcea75f8b85cf660/confetti-desktop.png');
   height:190px;
   width:100%;
   /* background-size: cover; */
