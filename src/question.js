@@ -14,7 +14,6 @@ class Question extends Component{
             // slideClass:
         });
         // console.log(this.props.answered);
-
     }
 
     checkStatus(inClass){

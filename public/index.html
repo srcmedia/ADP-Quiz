@@ -19,7 +19,35 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>ADP Quiz</title>
+    <script src="//app-sj03.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <script>
+      console.log('meow meow meow')
+      MktoForms2.loadForm("//app-sj03.marketo.com", "555-ETU-514", 20631);
+      MktoForms2.whenReady(function(formObject){
+        console.log('nya nya nya');
+        var $theForm = formObject.getFormElem();
+        console.log($theForm);
+        $('style', $theForm).remove();
+        $('#mktoForms2BaseStyle').remove();
+        $('#mktoForms2ThemeStyle').remove();
+        $theForm.removeAttr('style');
+        $('*', $theForm).removeAttr('style');
+        $('.mktoForm').style = "";
+        $('.mktoField').style = "";
+        // Strip extra elements
+        $('.mktoAsterix', $theForm).remove();
+        $('.mktoOffset', $theForm).remove();
+        $('.mktoGutter', $theForm).remove();
+        $('.mktoClear', $theForm).remove();
+        // Remove excess classes
+        $('*').removeClass('mktoHasWidth');
+        $('.mktoFormRow.hide', formObject.getFormElem()).removeClass('hide');
+        $('.mktoPlaceholder:empty, [type="hidden"]', formObject.getFormElem()).closest('.mktoFormRow').addClass('hide');
+        //to make form responsive
+        $('form[id^="mktoForm_"]').css("width", "100%!important");
+      });
+    </script>
   </head>
   <body>
     <noscript>
@@ -37,4 +65,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
 </html>

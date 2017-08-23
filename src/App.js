@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Question from './question.js';
 import Results from './results.js';
 import questiondata from './questions.json';
+// import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
 import ReactGA from 'react-ga';
 
 import './App.css';
@@ -69,7 +70,7 @@ class App extends Component {
       if(this.getTotal()<4)this.reactClickEvent('End Page Result 1');
       if(this.getTotal()>3 && this.getTotal()<7)this.reactClickEvent('End Page Result 2');
       if(this.getTotal()>6 && this.getTotal() < 10)this.reactClickEvent('End Page Result 3');
-      if(this.getTotal()==10)this.reactClickEvent('End Page Result 4');
+      if(this.getTotal()===10)this.reactClickEvent('End Page Result 4');
     }
   }
 
@@ -134,7 +135,6 @@ class App extends Component {
         <p className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'results--hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
       </section>
       <section className={this.state.splashDisplay === true ? 'intro--displayed' : 'intro--hidden'}>
-        <h2></h2>
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
       </section>
@@ -161,57 +161,33 @@ class App extends Component {
         <h3>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h3>
         {this.getTotal() < 4 &&
           <p>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Fill out the registration form and download these practical resources to get you on the road to success:
-          <ul>
-            <li>Becoming an Employer of Choice (guide)</li>
-            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
-            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
-            <li>Fixing the Talent Management Disconnect (white paper)</li>
-            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
-          </ul>
-            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
           </p>
+          
         }
          {this.getTotal() < 7 && this.getTotal() > 3 &&
-          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:
-          <ul>
-            <li>Becoming an Employer of Choice (guide)</li>
-            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
-            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
-            <li>Fixing the Talent Management Disconnect (white paper)</li>
-            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
-          </ul>
-            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
-          </p>
+          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p> 
         }
         {this.getTotal() < 10 && this.getTotal() > 6 &&
-          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:
-          <ul>
-            <li>Becoming an Employer of Choice (guide)</li>
-            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
-            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
-            <li>Fixing the Talent Management Disconnect (white paper)</li>
-            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
-          </ul>
-            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
-          </p>
+          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
         }
         {this.getTotal() === 10 &&
-          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:
-          <ul>
+          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
+        }
+        <ul>
             <li>Becoming an Employer of Choice (guide)</li>
             <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
             <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
             <li>Fixing the Talent Management Disconnect (white paper)</li>
             <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
           </ul>
-            For more information on how ADP can help, visit us at <a href="#">adp.com/accountant</a>
+            <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a>
           </p>
-        }
+
         </div>
 
         <div className="resultsform">
-          <h5>Fill out the form below and get tips to help you become a top firm.</h5>
-          <label>First Name</label>
+           <h5>Fill out the form below and get tips to help you become a top firm.</h5>
+          {/*<label>First Name</label>
           <input type="text"></input>
           <label>Last Name</label>
           <input type="text"></input>
@@ -222,6 +198,8 @@ class App extends Component {
           <label>Phone Number</label>
           <input type="tel"></input>
           <button>Submit</button>
+        </div> */}
+        <form id="mktoForm_20631"></form>
         </div>
       </section>
 

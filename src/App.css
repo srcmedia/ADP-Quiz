@@ -7,11 +7,9 @@
 body{
   background-color:#F9F9F9;
 }
-
 p{
   margin: 0;
 }
-
 .cf:after{
   content: "";
   display: table;
@@ -318,14 +316,24 @@ h3 span{
   line-height: 34px;  
   margin: 30px 0 40px;
 }
-.resultsform input{
-  width:100%;
-  border:1px solid #ccc;
-  padding: 17px 15px;
-  margin: 5px auto 20px;
-  font-size: 18px;
-  background-color:#fff;
+.mktoForm input[type="text"],
+.mktoForm input[type="email"],
+.mktoForm input[type="tel"],
+{
+  width:100%!important;
+  /* border:1px solid #ccc; */
+  border: 1px dotted red;
+  padding: 17px 15px!important;
+  margin: 5px auto 20px!important;
+  font-size: 18px!important;
+  background-color:#fff!important;
+  box-shadow: none!important;
 }
+
+.mktoForm input.mktoField.mktoInvalid, .mktoForm select.mktoField.mktoInvalid, .mktoForm textarea.mktoField.mktoInvalid, .mktoForm div.mktoLogicalField.mktoInvalid{
+  border:1px solid #ccc!important;
+}
+
 .resultsform label{
   font-weight: bold;
   font-size:16px;
@@ -348,13 +356,16 @@ h3 span{
     border:none;
     cursor: pointer;
     display:block;
-
 }
 
-
-.resultsform input{
-
+.mktoform{
+  width:100%!important;
 }
+.mktoForm .mktoRequiredField .mktoAsterix{
+  display: none!important;
+}
+
+form[id^="mktoForm_"]{width:100%!important;}
 
 /* Small Desktop */
 @media only screen and (min-width:970px){
