@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Question from './question.js';
 import Results from './results.js';
 import questiondata from './questions.json';
-import facebook from './facebook.svg';
-import linkedin from './linkedin.svg';
-import twitter from './twitter.svg';
 
 // import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
 import ReactGA from 'react-ga';
@@ -142,9 +139,9 @@ class App extends Component {
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
           <span className="sharetext">Share this Quiz: 
-          <a href="#"><img src={facebook} className="share--item" alt="facebook"/></a>
-          <a href="#"><img src={linkedin} className="share--item" alt="linked in"/></a>
-          <a href="#"><img src={twitter} className="share--item" alt="twitter"/></a>
+          <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/f4/76/45b2097c4d4fb3897e9a2ee8d095/facebook.svg' className="share--item" alt="facebook"/></a>
+          <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/a5/e2/0204dac1480caf5f64f1f31d1e9e/linkedin.svg' className="share--item" alt="linked in"/></a>
+          <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
           </span>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}>
@@ -193,9 +190,9 @@ class App extends Component {
           </p>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &copy; 2017 All rights reserved.</p>
           <span className="sharetext">Share this Quiz: 
-          <a href="#"><img src={facebook} className="share--item" alt="facebook"/></a>
-          <a href="#"><img src={linkedin} className="share--item" alt="linked in"/></a>
-          <a href="#"><img src={twitter} className="share--item" alt="twitter"/></a>
+          <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/f4/76/45b2097c4d4fb3897e9a2ee8d095/facebook.svg' className="share--item" alt="facebook"/></a>
+          <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/a5/e2/0204dac1480caf5f64f1f31d1e9e/linkedin.svg' className="share--item" alt="linked in"/></a>
+          <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
           </span>
         </div>
 
