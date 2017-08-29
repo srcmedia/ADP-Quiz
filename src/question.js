@@ -13,7 +13,6 @@ class Question extends Component{
             slideClass: this.props.currentSlide-1 === this.props.index ? 'card current' : 'card'
             // slideClass:
         });
-        // console.log(this.props.answered);
     }
 
     checkStatus(inClass){
