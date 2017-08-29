@@ -7,8 +7,9 @@
 body{
   background-color:#F9F9F9;
 }
-p{
+p,li{
   margin: 0;
+  line-height:1.47em;
 }
 .cf:after{
   content: "";
@@ -23,6 +24,7 @@ p{
   border:2px solid #efefef;
   background-color:#fff;
   min-height:800px;
+  position: relative;
 }
 
 .wrapper:after {
@@ -130,38 +132,42 @@ h3 span{
 .quiztitle{
   float:left;
 }
-.intro,
-.questions,
+.questions
 {
   clear:both;
   position: relative;
   overflow:hidden;
   min-height: 450px;
   opacity: 1;
-  transition: opacity .5s;
+  transition: opacity .5s, visibility .5s;
+  transition-delay: .5s;
 }
 .intro{
   position:absolute;
   width:100%;
   height:450px;
   z-index:99;
+  transition: opacity .5s, visibility .5s;
 }
 .intro.hidden{
   opacity: 0;
+  visibility:hidden;
 }
 .results{
-  /* position: absolute; */
+  position: relative;
   display:block;
   width:100%;
   opacity: 1;
   transition: opacity .5s;
-  
 }
 .questions.hidden,
 .results.hidden{
-  display: none;
+  visibility: hidden;
   opacity:0;
   z-index:-1;
+}
+.questions.displayed{
+  z-index:99;
 }
 .question{
   font-family: Rokkitt-Bold;
@@ -171,11 +177,11 @@ h3 span{
 .card{
   display: flex; 
   /* justify-content: space-between; */
-  height:100%;
+  /* height:100%; */
   min-width:100%;
   position:absolute;
   /* display:none;  */
-  top:0px;
+  /* top:0px; */
   left:-100%;
   padding:40px 50px 20px;
    opacity:0;
@@ -288,10 +294,13 @@ h3 span{
 
 }
 .controllers--displayed{
-    position: relative;
+    position: absolute;
     display: inline-block;
-    float: right;
+    right: 0px;
+    bottom: 40px;
     padding-right:50px;
+    z-index: 999;
+    height:26px;
 }
 .controllers--hidden{
   display:none;
@@ -372,15 +381,18 @@ p.copyright{
 .mktoForm input[type="text"],
 .mktoEmailField,
 .mktoForm input[type=tel],
+.mktoForm select
 {
   width:100%!important;
   /* border:1px solid #ccc; */
-  border: 1px dotted red;
-  padding: 17px 15px!important;
+  /* border: 1px dotted red; */
+  padding: 17px 15px;
   margin: 5px auto 20px!important;
   font-size: 18px!important;
   background-color:#fff!important;
   box-shadow: none!important;
+  -webkit-display:none;
+  height:55px;
 }
 
 .mktoField{
@@ -476,7 +488,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     letter-spacing: 0;
     line-height: 18px;
     font-family: Arial;
-    margin-bottom: 20px;    
+    margin-bottom: 0px;    
   }
   
   .card,
@@ -524,6 +536,7 @@ form[id^="mktoForm_"]{width:100%!important;}
   .questions--displayed, 
   .results--displayed{
     min-height:300px;
+    
   }
   .controllers--displayed{
     width:145px;
@@ -532,6 +545,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     float:none;
     margin: 0 auto;
     padding:0;
+    position: inherit;
     
   }
   .results--text{
@@ -581,5 +595,16 @@ form[id^="mktoForm_"]{width:100%!important;}
   }
   .resultsform button{
     width:100%;
+  }
+
+  .results.shown{
+    flex-flow: row wrap;    
+  }
+  p.copyright{
+    position:relative;
+    margin-top: 20px;
+  }
+  .sharetext{
+    margin:20px 0;
   }
 }

@@ -74,7 +74,6 @@ class App extends Component {
       if(this.getTotal()===10)this.reactClickEvent('End Page Result 4');
     }
   }
-
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
     newArray[0][key][0]=1;
@@ -84,17 +83,12 @@ class App extends Component {
     });
     this.reactClickEvent('question: ' + key + ' choice: ' +choice);
   }
-  
-
   buildQuestions(questionsObject){
     //FORMAT!!  Answered Yes No 
     let questions = [];
     questions.push(questionsObject.map((object, key)=>[0, 0, 0]));
     return questions;
   }
-  
-  // resetQuestions
-
   getTotal(){
     let addedUp=0;
     for(let i=0;i<this.state.questions[0].length;i++){
@@ -102,14 +96,12 @@ class App extends Component {
     }
     return addedUp;
   }
-
   reactClickEvent(eventLabel){
     ReactGA.event({
       category:'Sponsored Quiz',
       action: 'Best Accounting Firms – ADP',
       label: eventLabel
     }); 
-    console.log(eventLabel);
   }
 
   render(){
@@ -144,7 +136,9 @@ class App extends Component {
           <a href="#"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
           </span>
       </section>
-      <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}>
+      <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
+      style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
+      >
         {questiondata.questions.map((obj, key)=>
           <Question 
               text={obj.question} 
@@ -162,7 +156,7 @@ class App extends Component {
 
         {questiondata.results.map((obj, key)=><Results title={obj.title} moreinfo={obj.moreinfo} key={key}></Results>)}
       </section>
-      <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'}>
+      <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'} style={{display: this.state.quizComplete === false ? 'none' : 'flex'}}>
         <div className="results--text">
         <h3>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h3>
         {this.getTotal() < 4 &&
