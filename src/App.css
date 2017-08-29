@@ -22,6 +22,7 @@ p{
   width:100%;
   border:2px solid #efefef;
   background-color:#fff;
+  min-height:800px;
 }
 
 .wrapper:after {
@@ -70,7 +71,29 @@ header span{
   width:100%;
   /* background-size: cover; */
 }
-
+.sharetext{
+  font-size: 14px;
+  color:#000;
+  font-weight: 700;
+  margin-top:50px;
+  position: relative;
+  display: block;
+}
+.share--item{
+  height: 25px;
+  width: 25px;
+  margin-right: 5px;
+  top: 6px;
+  position: relative;
+  color:#64BEEB;
+}
+.share--item:first-of-type{
+  margin-left:10px;
+}
+.share--item:hover{
+  opacity:.6;
+  cursor: pointer;
+}
 .counter{
   font-family: ArialMT;
   font-size: 16px;
@@ -88,7 +111,7 @@ h2{
   margin:0;
 }
 
-.intro--displayed h3{
+.intro h3{
   text-align:center;
   max-width:600px;
   margin: 0 auto 50px;
@@ -107,21 +130,38 @@ h3 span{
 .quiztitle{
   float:left;
 }
-.intro--displayed,
-.questions--displayed,
-.results--displayed
+.intro,
+.questions,
 {
   clear:both;
   position: relative;
   overflow:hidden;
   min-height: 450px;
   opacity: 1;
-  transition: opacity 1s;
+  transition: opacity .5s;
 }
-
-.questions--hidden,
-.results--hidden{
+.intro{
+  position:absolute;
+  width:100%;
+  height:450px;
+  z-index:99;
+}
+.intro.hidden{
+  opacity: 0;
+}
+.results{
+  /* position: absolute; */
+  display:block;
+  width:100%;
+  opacity: 1;
+  transition: opacity .5s;
+  
+}
+.questions.hidden,
+.results.hidden{
   display: none;
+  opacity:0;
+  z-index:-1;
 }
 .question{
   font-family: Rokkitt-Bold;
@@ -253,9 +293,11 @@ h3 span{
     float: right;
     padding-right:50px;
 }
-.intro--hidden,
 .controllers--hidden{
   display:none;
+  opacity:0;
+}
+.hidden{
   opacity:0;
 }
 .previous,
@@ -286,10 +328,10 @@ h3 span{
   letter-spacing: 0;
   padding-left:10px;
 }
-.results--shown{
+.results.shown{
   display: flex;
 }
-.results--shown h4{
+.results.shown h4{
   font-family: Rokkitt-Regular;
   font-size: 44px;
   color: #333333;
@@ -301,6 +343,7 @@ h3 span{
   width:615px;
   padding:45px 0 0;
   margin: 0 60px 0 0;
+  position: relative;
 }
 
 .results--text h3{
@@ -318,6 +361,13 @@ h3 span{
   font-size: 24px;
   color: #333333;
   line-height: 34px;  
+}
+p.copyright{
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  color:#888;
+  font-size:12px;
 }
 .mktoForm input[type="text"],
 .mktoEmailField,

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Question from './question.js';
 import Results from './results.js';
 import questiondata from './questions.json';
+import facebook from './facebook.svg';
+import linkedin from './linkedin.svg';
+import twitter from './twitter.svg';
+
 // import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
 import ReactGA from 'react-ga';
 
@@ -51,7 +55,7 @@ class App extends Component {
   }
 
   nextClick(){
-    if(this.state.currentquestion < this.state.maxQuestions){
+    if(this.state.currentquestion < this.state.maxQuestions && this.state.questions[0][this.state.currentquestion-1][0]===1){
       let newArray = this.state.questions;
       newArray[0][this.state.currentquestion][0]=0;
       newArray[0][this.state.currentquestion][1]=0;
@@ -62,7 +66,7 @@ class App extends Component {
           };
       });
     }
-    else{
+    else if(this.state.currentquestion === this.state.maxQuestions && this.state.questions[0][this.state.currentquestion-1][0]===1){
       this.reactClickEvent('Complete');
       this.setState((prevState)=>{
         return {quizComplete: true}
@@ -132,13 +136,18 @@ class App extends Component {
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'results--hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
+        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
       </section>
-      <section className={this.state.splashDisplay === true ? 'intro--displayed' : 'intro--hidden'}>
+      <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
+          <span className="sharetext">Share this Quiz: 
+          <a href="#"><img src={facebook} className="share--item" alt="facebook"/></a>
+          <a href="#"><img src={linkedin} className="share--item" alt="linked in"/></a>
+          <a href="#"><img src={twitter} className="share--item" alt="twitter"/></a>
+          </span>
       </section>
-      <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions--hidden' : 'questions--displayed'}>
+      <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}>
         {questiondata.questions.map((obj, key)=>
           <Question 
               text={obj.question} 
@@ -156,7 +165,7 @@ class App extends Component {
 
         {questiondata.results.map((obj, key)=><Results title={obj.title} moreinfo={obj.moreinfo} key={key}></Results>)}
       </section>
-      <section className={this.state.quizComplete === false ? 'results--hidden' : 'results--shown'}>
+      <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'}>
         <div className="results--text">
         <h3>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h3>
         {this.getTotal() < 4 &&
@@ -177,12 +186,17 @@ class App extends Component {
             <li>Becoming an Employer of Choice (guide)</li>
             <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
             <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
-            <li>Fixing the Talent Management Disconnect (white paper)</li>
+            <li>Fixing the Talent Management Disconnect (white paper)</li>  
             <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
           </ul>
             <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a>
           </p>
-
+          <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &copy; 2017 All rights reserved.</p>
+          <span className="sharetext">Share this Quiz: 
+          <a href="#"><img src={facebook} className="share--item" alt="facebook"/></a>
+          <a href="#"><img src={linkedin} className="share--item" alt="linked in"/></a>
+          <a href="#"><img src={twitter} className="share--item" alt="twitter"/></a>
+          </span>
         </div>
 
         <div className="resultsform">
