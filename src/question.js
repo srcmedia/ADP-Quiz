@@ -11,7 +11,6 @@ class Question extends Component{
     componentDidMount(){
         this.setState({
             slideClass: this.props.currentSlide-1 === this.props.index ? 'card current' : 'card'
-            // slideClass:
         });
     }
 
@@ -28,11 +27,9 @@ class Question extends Component{
         }
         return response;
     }
-
     radioClick(value){
         this.props.updateStatus(this.props.index, value);
     }
-
     render(){ 
         return(
             <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + (this.props.answered === 1 ? ' answered' : '' )}>

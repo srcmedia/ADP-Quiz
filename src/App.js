@@ -68,12 +68,42 @@ class App extends Component {
       this.setState((prevState)=>{
         return {quizComplete: true}
       });
-      if(this.getTotal()<4)this.reactClickEvent('End Page Result 1');
-      if(this.getTotal()>3 && this.getTotal()<7)this.reactClickEvent('End Page Result 2');
-      if(this.getTotal()>6 && this.getTotal() < 10)this.reactClickEvent('End Page Result 3');
-      if(this.getTotal()===10)this.reactClickEvent('End Page Result 4');
+      if(this.getTotal()<4){
+        this.reactClickEvent('End Page Result 1');
+        if( typeof MktoForms2 != "undefined" ) {
+          window.MktoForms2.whenReady( function (form) { 
+              form.vals({"actadpquizgroup":"1"});
+          });
+        }
+      }
+      if(this.getTotal()>3 && this.getTotal()<7){
+          this.reactClickEvent('End Page Result 2');
+          if( typeof MktoForms2 != "undefined" ) {
+            window.MktoForms2.whenReady( function (form) { 
+                form.vals({"actadpquizgroup":"2"});
+            });
+          }
+        }
+      }
+      if(this.getTotal()>6 && this.getTotal() < 10){
+        this.reactClickEvent('End Page Result 3');
+        if( typeof MktoForms2 != "undefined" ) {
+          window.MktoForms2.whenReady( function (form) { 
+              form.vals({"actadpquizgroup":"3"});
+          });
+        }
+      }
+    
+      if(this.getTotal()===10){
+        this.reactClickEvent('End Page Result 4');
+        if( typeof MktoForms2 != "undefined" ) {
+          window.MktoForms2.whenReady( function (form) { 
+              form.vals({"actadpquizgroup":"4"});
+          });
+        }
+      }
     }
-  }
+  
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
     newArray[0][key][0]=1;
