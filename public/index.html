@@ -25,7 +25,6 @@
       MktoForms2.loadForm("//app-sj03.marketo.com", "555-ETU-514", 20631);
       MktoForms2.whenReady(function(formObject){
         var $theForm = formObject.getFormElem();
-        console.log($theForm);
         $('style', $theForm).remove();
         $('#mktoForms2BaseStyle').remove();
         $('#mktoForms2ThemeStyle').remove();

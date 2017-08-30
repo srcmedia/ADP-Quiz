@@ -9,6 +9,8 @@ import ReactGA from 'react-ga';
 import './App.css';
 
 ReactGA.initialize('UA-219761-62');
+ReactGA.set({page: window.location.pathname, title: document.title, location: window.location})
+ReactGA.pageview('/best-accounting-firms-quiz');
 
 class App extends Component {
   constructor(props){
@@ -106,12 +108,14 @@ class App extends Component {
   
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
+    let trackedKey = key + 1;
     newArray[0][key][0]=1;
     newArray[0][key][choice] = 1;
     this.setState({
       questions: newArray
     });
-    this.reactClickEvent('question: ' + key + ' choice: ' +choice);
+    
+    this.reactClickEvent('question: ' + trackedKey + ' choice: ' +choice);
   }
   buildQuestions(questionsObject){
     //FORMAT!!  Answered Yes No 
@@ -161,9 +165,9 @@ class App extends Component {
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
           <span className="sharetext">Share this Quiz: 
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/f4/76/45b2097c4d4fb3897e9a2ee8d095/facebook.svg' className="share--item" alt="facebook"/></a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.accountingtoday.com/best-accounting-firms-quiz&title=Best%20Accounting%20Firms%20to%20Work%20For%20Quiz&summary=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.&source=" target="_blank" rel="noopener noreferrer"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/a5/e2/0204dac1480caf5f64f1f31d1e9e/linkedin.svg' className="share--item" alt="linked in"/></a>
-          <a href="https://twitter.com/home?status=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.%20https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer" onClick={this.reactClickEvent("Social - Facebook")}><img src='http://source-media-brightspot-lower.s3.amazonaws.com/f4/76/45b2097c4d4fb3897e9a2ee8d095/facebook.svg' className="share--item" alt="facebook"/></a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.accountingtoday.com/best-accounting-firms-quiz&title=Best%20Accounting%20Firms%20to%20Work%20For%20Quiz&summary=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.&source=" target="_blank" rel="noopener noreferrer" onClick={this.reactClickEvent("Social - Linkedin")}><img src='http://source-media-brightspot-lower.s3.amazonaws.com/a5/e2/0204dac1480caf5f64f1f31d1e9e/linkedin.svg' className="share--item" alt="linked in"/></a>
+          <a href="https://twitter.com/home?status=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.%20https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer" onClick={this.reactClickEvent("Social - Twitter")}><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
           </span>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
@@ -214,9 +218,9 @@ class App extends Component {
           </p>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &copy; 2017 All rights reserved.</p>
           <span className="sharetext">Share this Quiz: 
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/f4/76/45b2097c4d4fb3897e9a2ee8d095/facebook.svg' className="share--item" alt="facebook"/></a>
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.accountingtoday.com/best-accounting-firms-quiz&title=Best%20Accounting%20Firms%20to%20Work%20For%20Quiz&summary=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.&source=" target="_blank" rel="noopener noreferrer"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/a5/e2/0204dac1480caf5f64f1f31d1e9e/linkedin.svg' className="share--item" alt="linked in"/></a>
-          <a href="https://twitter.com/home?status=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.%20https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer"><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer" onClick={this.reactClickEvent("Social - Facebook")}><img src='http://source-media-brightspot-lower.s3.amazonaws.com/f4/76/45b2097c4d4fb3897e9a2ee8d095/facebook.svg' className="share--item" alt="facebook"/></a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.accountingtoday.com/best-accounting-firms-quiz&title=Best%20Accounting%20Firms%20to%20Work%20For%20Quiz&summary=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.&source=" target="_blank" rel="noopener noreferrer" onClick={this.reactClickEvent("Social - Linkedin")}><img src='http://source-media-brightspot-lower.s3.amazonaws.com/a5/e2/0204dac1480caf5f64f1f31d1e9e/linkedin.svg' className="share--item" alt="linked in"/></a>
+          <a href="https://twitter.com/home?status=I%20just%20took%20this%20quiz%20to%20see%20if%20my%20firm%20is%20one%20of%20the%20best%20firms%20to%20work%20for%20in%20accounting.%20Check%20it%20out.%20https%3A//www.accountingtoday.com/best-accounting-firms-quiz" target="_blank" rel="noopener noreferrer" onClick={this.reactClickEvent("Social - Twitter")}><img src='http://source-media-brightspot-lower.s3.amazonaws.com/14/01/bfa170354b7590f553e17a2b8c85/twitter.svg' className="share--item" alt="twitter"/></a>
           </span>
         </div>
 
