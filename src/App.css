@@ -183,8 +183,8 @@ h3 span{
   /* display:none;  */
   /* top:0px; */
   left:-100%;
-  padding:40px 50px 20px;
-   opacity:0;
+  padding: 0px 50px 20px;
+  opacity:0;
   transition: left 1.5s, opacity .5s;
  
 }
@@ -360,7 +360,7 @@ h3 span{
 }
 .resultsform{
   background-color:#fff;
-   padding:35px 30px; 
+  padding: 0px 30px; 
   margin-bottom:40px;
   width: 600px;
 }
