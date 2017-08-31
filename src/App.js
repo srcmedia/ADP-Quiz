@@ -141,11 +141,14 @@ class App extends Component {
   render(){
     return (
       <div className="wrapper">
-      <header><img 
-        src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
-        className="site-logo"
-        alt="Accounting Today"
-        />
+      <header>
+        <a href="/">
+          <img 
+          src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
+          className="site-logo"
+          alt="Accounting Today"
+          />
+        </a>
       
        <img
         src={"https://source-media-brightspot-lower.s3.amazonaws.com/39/b0/3f81867647589b47ae996bbc88d0/automatic-data-processing.png"}
