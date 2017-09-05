@@ -207,18 +207,18 @@ class App extends Component {
         <div className="results--text">
         <h3>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h3>
         {this.getTotal() < 4 &&
-          <p>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Fill out the registration form and download these practical resources to get you on the road to success:
+          <p>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP&copy; has tons of awesome resources to help make you an Employer of Choice! Fill out the registration form and download these practical resources to get you on the road to success:
           </p>
           
         }
          {this.getTotal() < 7 && this.getTotal() > 3 &&
-          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p> 
+          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP&copy; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p> 
         }
         {this.getTotal() < 10 && this.getTotal() > 6 &&
-          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
+          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP&copy; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
         }
         {this.getTotal() === 10 &&
-          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
+          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP&copy; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
         }
         <ul>
             <li>Becoming an Employer of Choice (guide)</li>
