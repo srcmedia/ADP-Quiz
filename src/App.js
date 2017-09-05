@@ -180,7 +180,7 @@ class App extends Component {
       <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
-        <SocialShare/>
+        <SocialShare reactClickEvent={this.reactClickEvent}/>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
       style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
@@ -230,8 +230,8 @@ class App extends Component {
             <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a>
           </p>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &copy; 2017 All rights reserved.</p>
-          <SocialShare/>          
-        </div>
+          <SocialShare reactClickEvent={this.reactClickEvent}/>
+          </div>
 
         <div className="resultsform">
            <h5>Fill out the form below and get tips to help you become a top firm.</h5>
