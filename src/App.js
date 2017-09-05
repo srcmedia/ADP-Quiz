@@ -161,13 +161,14 @@ class App extends Component {
           alt="Accounting Today"
           />
         </a>
-      
+        <span className="mobile--only">Sponsored By</span>
+
        <img
         src={"https://source-media-brightspot-lower.s3.amazonaws.com/39/b0/3f81867647589b47ae996bbc88d0/automatic-data-processing.png"}
         className="sponsor-logo"
         alt="ADP"
           />
-        <span>Sponsored By</span>
+        <span className="desktop--only">Sponsored By</span>
        
       </header>
       <section className="bluebar">
