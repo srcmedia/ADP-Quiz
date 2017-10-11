@@ -88,7 +88,7 @@ class App extends Component {
               });
           }
         }
-      }
+      
       if(this.getTotal()>6 && this.getTotal() < 10){
         this.reactClickEvent('End Page Result 3');
         if( typeof MktoForms2 !== "undefined" ) {
@@ -107,7 +107,8 @@ class App extends Component {
         }
       }
     }
-  
+  }
+
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
     let trackedKey = key + 1;
