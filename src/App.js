@@ -213,22 +213,20 @@ class App extends Component {
           
         }
          {this.getTotal() < 7 && this.getTotal() > 3 &&
-          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p> 
+          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p> 
         }
         {this.getTotal() < 10 && this.getTotal() > 6 &&
-          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
+          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p>
         }
         {this.getTotal() === 10 &&
-          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download these practical resources to get you on the road to success:</p>
+          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p>
         }
         <ul>
             <li>Becoming an Employer of Choice (guide)</li>
-            <li>How Human Capital Management Impacts P&amp;L and Margins (eBook)</li>
-            <li>Hidden Talent: Finding Solutions to Today’s CPA Talent Shortage (white paper)</li>
             <li>Fixing the Talent Management Disconnect (white paper)</li>  
-            <li>Evolution of Work 2.0: The Me vs. We Mindset (eBook)</li>
+            <li>And More!</li>
           </ul>
-            <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a>
+            {/* <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a> */}
           </p>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2017 All rights reserved.</p>
           <SocialShare reactClickEvent={this.reactClickEvent}/>
