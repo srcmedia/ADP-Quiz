@@ -226,7 +226,12 @@ class App extends Component {
             <li>Fixing the Talent Management Disconnect (white paper)</li>  
             <li>And More!</li>
           </ul>
+<<<<<<< HEAD
             {/*  */}
+=======
+            {/* <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p> */}
+          
+>>>>>>> origin/master
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2017 All rights reserved.</p>
           <SocialShare reactClickEvent={this.reactClickEvent}/>
           </div>
