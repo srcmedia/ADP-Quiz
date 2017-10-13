@@ -378,6 +378,9 @@ h3 span{
   color: #333333;
   line-height: 34px;  
 }
+.resultsform p{
+  margin-top:20px;
+}
 p.copyright{
   position: absolute;
   bottom:0px;

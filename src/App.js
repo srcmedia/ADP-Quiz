@@ -226,8 +226,7 @@ class App extends Component {
             <li>Fixing the Talent Management Disconnect (white paper)</li>  
             <li>And More!</li>
           </ul>
-            {/* <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a> */}
-          </p>
+            {/*  */}
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2017 All rights reserved.</p>
           <SocialShare reactClickEvent={this.reactClickEvent}/>
           </div>
@@ -235,6 +234,7 @@ class App extends Component {
         <div className="resultsform">
            <h5>Fill out the form below and get tips to help you become a top firm.</h5>
         <form id="mktoForm_20631"></form>
+        <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
         </div>
       </section>
 
