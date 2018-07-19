@@ -5,7 +5,10 @@
 }
 
 body{
-  background-color:#F9F9F9;
+  /* background-color:#F9F9F9; */
+  background-image: url(./adp_bkg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 p,li{
   margin: 0;
@@ -75,8 +78,8 @@ header span{
 }
 
 .bluebar{
-  background-image: url('https://source-media-brightspot-lower.s3.amazonaws.com/22/28/5ff5d8994384bcea75f8b85cf660/confetti-desktop.png');
-  height:190px;
+  background-image: url('./confetti.png');
+  height:120px;
   width:100%;
   /* background-size: cover; */
 }
@@ -94,7 +97,7 @@ header span{
   margin-right: 5px;
   top: 6px;
   position: relative;
-  color:#64BEEB;
+  color:#68B545;
 }
 .share--item:first-of-type{
   margin-left:10px;
@@ -198,7 +201,7 @@ h3 span{
 .fakeRadio,
 .fakeRadio--active
 {
-  border:1px solid #64BEEB;
+  border:1px solid #68B545;
   height:20px;
   width:20px;
   border-radius: 10px;
@@ -211,7 +214,7 @@ h3 span{
 }
 .fakeRadio--active:after{
   content:'';
-  background: #64BEEB;
+  background: #68B545;
   height:10px;
   width:10px;
   top:4px;
@@ -234,6 +237,13 @@ h3 span{
   transition: color .2s;
   display:inline-block;
   position:relative;
+}
+.card h2::after{
+  display:inline-block;
+  float:left;
+  height: 6px;
+  width: 120px;
+  background-color: #68B545;
 }
 .card ul{
   list-style: none;
@@ -281,7 +291,7 @@ h3 span{
 .takeaway h4{
   font-family: 'Rokkitt', serif;  
   font-size: 52px;
-  color: #64BEEB;
+  color: #68B545;
   margin: 0 0 10px;
 }
 
@@ -319,13 +329,13 @@ h3 span{
 .previous,
 .next{
   cursor: pointer;
-  color: #64BEEB;
+  color: #68B545;
   line-height:26px; 
 }
 
 .previous:hover,
 .next:hover{
-  color:rgba(100,190,235,.7);
+  opacity:.7;
 }
 
 .previous{
@@ -333,7 +343,7 @@ h3 span{
   font-size: 16px; 
   position: relative;
   top: -3px;
-  border-right:2px solid #64BEEB;
+  border-right:2px solid #68B545;
   height: 26px;
   padding-right:10px;
   display: inline-block;
@@ -426,7 +436,7 @@ p.copyright{
 }
  button{
       /* Rectangle 77: */
-    background: #64BEEB;
+    background: #68B545;
     /* Submit: */
     font-family: Arial-BoldMT;
     font-size: 16px;
@@ -464,7 +474,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     padding:20px 30px;
   }
   .bluebar{
-    height:142px;
+    height:72px;
     background-size: cover;
   }
   .site-logo{
@@ -495,6 +505,7 @@ form[id^="mktoForm_"]{width:100%!important;}
   }
   .bluebar{
     background-size:cover;
+    height:40px;
   }
   section{
     padding:20px;
@@ -531,9 +542,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     width:100%;
     clear:left;
   }
-  .bluebar{
-    height:70px;
-  }
+ 
   .counter{
     width:100%;
     text-align: center;
@@ -594,7 +603,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     order:1;
   }
   .previous{
-    border-top:1px solid #64BEEB;
+    border-top:1px solid #68B545;
     border-right:none;
     margin-top:5px;
     padding:10px 0 0;
