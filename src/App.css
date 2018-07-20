@@ -128,6 +128,17 @@ h2{
   max-width:600px;
   margin: 0 auto 50px;
 }
+.intro h3::before{
+  display:block;
+  height: 6px;
+  width: 120px;
+  background-color: #68B545;
+  content: "";
+  top:-20px;
+  position: relative;
+  margin: 0 auto;
+}
+
 h3{
   font-family: 'Rokkitt', serif;
   font-size: 32px;
@@ -238,12 +249,14 @@ h3 span{
   display:inline-block;
   position:relative;
 }
-.card h2::after{
-  display:inline-block;
-  float:left;
+.card h2::before{
+  display:block;
   height: 6px;
   width: 120px;
   background-color: #68B545;
+  content: "";
+  top:-20px;
+  position: absolute;
 }
 .card ul{
   list-style: none;
