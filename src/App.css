@@ -535,6 +535,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     float: inherit;
     margin: 0 auto;
     position: relative;
+    
   }
   section{
     padding:20px;

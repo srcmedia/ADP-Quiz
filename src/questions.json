@@ -2,6 +2,17 @@
     "title": "Is your firm one of the best places to work in accounting?",
     "questions": [
             {
+                "question": "What's your firm size?",
+                "weight": 1,
+                "takeaway": "",
+                "marketoTrack":"aCTADPQuizQ0FirmSize",
+                "answers":[
+                    {"title":"A small firm (up to 49 employees)"},
+                    {"title":"A mid-sized firm (between 50 and 249 associates)"}, 
+                    {"title":"A large firm (250 or more employees)"}
+                ]
+            },
+            {
                 "question": "Does your firm allow paid time off for community service activities or volunteer work?",
                 "weight": 1,
                 "takeaway": "Younger staff in particular are likely to expect their employer to support charitable activities.",

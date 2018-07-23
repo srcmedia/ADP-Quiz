@@ -129,12 +129,14 @@ class App extends Component {
         });
     }
   }
+
   buildQuestions(questionsObject){
     //FORMAT!!  Answered Yes No 
     let questions = [];
     questions.push(questionsObject.map((object, key)=>[0, 0, 0]));
     return questions;
   }
+  
   getTotal(){
     let addedUp=0;
     for(let i=0;i<this.state.questions[0].length;i++){
@@ -194,6 +196,7 @@ class App extends Component {
               index={key} 
               takeaway={obj.takeaway}
               marketoTrack={obj.marketoTrack}
+              answers={obj.answers}
               currentSlide={this.state.currentquestion}
               answered={this.state.questions[0][key][0]}
               yes={this.state.questions[0][key][1]}
