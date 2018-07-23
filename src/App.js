@@ -3,7 +3,7 @@ import Question from './question.js';
 import Results from './results.js';
 import SocialShare from './socialshare.js';
 import questiondata from './questions.json';
-
+import bestof from './ACTBestFirms.png';
 
 // import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
 import ReactGA from 'react-ga';
@@ -182,6 +182,7 @@ class App extends Component {
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
         <SocialShare reactClickEvent={this.reactClickEvent}/>
+        <img src={bestof} className="bestfirms" alt="ACT Best Firms 2018"/>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
       style={{display: this.state.quizComplete === false ? 'block' : 'none'}}

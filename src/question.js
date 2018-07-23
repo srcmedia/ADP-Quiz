@@ -45,7 +45,6 @@ class Question extends Component{
                             </li>
                         <li>
                             <div className={this.props.no===1 ? 'fakeRadio--active' : 'fakeRadio'} 
-
                                 onClick={this.radioClick.bind(this, 2)}              ></div> <label>No</label> 
                             </li>
                     </ul>   

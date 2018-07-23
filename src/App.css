@@ -20,6 +20,7 @@ p,li{
   display: table;
   clear: both;
 }
+
 .wrapper{
   max-width:1400px; 
   margin: 0 auto;
@@ -66,9 +67,11 @@ header span{
   text-transform: uppercase;
   float:right;
 }
+
 .mobile--only{
   display:none;
 }
+
 .desktop--only{
   display:block;
 }
@@ -89,7 +92,7 @@ header span{
   font-weight: 700;
   margin-top:50px;
   position: relative;
-  display: block;
+  display: inline-block;
 }
 .share--item{
   height: 25px;
@@ -106,6 +109,7 @@ header span{
   opacity:.6;
   cursor: pointer;
 }
+
 .counter{
   font-family: ArialMT;
   font-size: 16px;
@@ -114,6 +118,7 @@ header span{
   position: relative;
   top: 11px;
 }
+
 h2{
     /* Does your firm allow: */
   font-family: 'Rokkitt', serif;
@@ -128,6 +133,7 @@ h2{
   max-width:600px;
   margin: 0 auto 50px;
 }
+
 .intro h3::before{
   display:block;
   height: 6px;
@@ -153,8 +159,7 @@ h3 span{
 .quiztitle{
   float:left;
 }
-.questions
-{
+.questions{
   clear:both;
   position: relative;
   overflow:hidden;
@@ -174,6 +179,12 @@ h3 span{
   opacity: 0;
   visibility:hidden;
 }
+.bestfirms{
+  width: 143px;
+  height: 144px;
+  float: right;
+}
+
 .results{
   position: relative;
   display:block;
@@ -183,7 +194,7 @@ h3 span{
 }
 .questions.hidden,
 .results.hidden{
-  visibility: hidden;
+  display: none;
   opacity:0;
   z-index:-1;
 }
@@ -520,6 +531,11 @@ form[id^="mktoForm_"]{width:100%!important;}
     background-size:cover;
     height:40px;
   }
+  .bestfirms{
+    float: inherit;
+    margin: 0 auto;
+    position: relative;
+  }
   section{
     padding:20px;
   }
@@ -531,7 +547,6 @@ form[id^="mktoForm_"]{width:100%!important;}
     font-family: Arial;
     margin-bottom: 0px;    
   }
-  
   .card,
   .card.current{
     display:block;
@@ -555,7 +570,6 @@ form[id^="mktoForm_"]{width:100%!important;}
     width:100%;
     clear:left;
   }
- 
   .counter{
     width:100%;
     text-align: center;
