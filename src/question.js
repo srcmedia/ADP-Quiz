@@ -19,8 +19,8 @@ class Question extends Component{
         if(this.props.currentSlide-1===this.props.index && inClass === undefined){
             response = response+" current";
         }
-        if(inClass !==undefined){
-            response = response+" answered";
+        if(inClass !==undefined && this.props.currentSlide!==0 ){
+            response = response + " answered meow";
         }
         if(this.props.currentSlide-1!==this.props.index){
             response="card";
@@ -34,7 +34,7 @@ class Question extends Component{
         const answers = this.props.answers;
 
         return(
-            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + (this.props.answered === 1 ? ' answered' : '' )}>
+            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + (this.props.answered === 1 && this.props.currentSlide!= 0 ? ' answered' : '' )}>
                 <h2>{this.props.text}</h2>
                 <div className="inputselect">
                     {answers !== undefined ? 
@@ -42,7 +42,7 @@ class Question extends Component{
                             <ul>
                                 {answers.map((obj, key)=>
                                     <li>
-                                        <div className={this.props.yes===1 ? 'fakeRadio--active' : 'fakeRadio'} 
+                                        <div className={this.props.initialanswer===key ? 'fakeRadio--active' : 'fakeRadio'} 
                                          onClick={this.radioClick.bind(this, key)}
                                             ></div> 
                                             <label>{obj.title}</label> 

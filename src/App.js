@@ -114,7 +114,8 @@ class App extends Component {
     let trackedKey = key + 1;
     let currentMarketoTrack = questiondata.questions[key].marketoTrack;
     let injectedObj = new Object();
-    injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";
+    if(key!==0){injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";}
+    else{injectedObj[currentMarketoTrack] = choice;}
     newArray[0][key][0]=1;
     newArray[0][key][choice] = 1;
     this.setState({
@@ -136,7 +137,7 @@ class App extends Component {
     questions.push(questionsObject.map((object, key)=>[0, 0, 0]));
     return questions;
   }
-  
+
   getTotal(){
     let addedUp=0;
     for(let i=0;i<this.state.questions[0].length;i++){
