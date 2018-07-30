@@ -5,6 +5,7 @@ import SocialShare from './socialshare.js';
 import questiondata from './questions.json';
 import bestof from './ACTBestFirms.png';
 
+
 // import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
 import ReactGA from 'react-ga';
 
@@ -116,7 +117,7 @@ class App extends Component {
     let injectedObj = new Object();
     if(key!==0){injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";}
     else{injectedObj[currentMarketoTrack] = choice;}
-    newArray[0][key][0]=1;
+    newArray[0][key][0]=1;  //Answered
     newArray[0][key][choice] = 1;
     this.setState({
       questions: newArray
@@ -129,6 +130,7 @@ class App extends Component {
           form.vals(injectedObj);
         });
     }
+    console.log(this.state.questions);
   }
 
   buildQuestions(questionsObject){
@@ -140,7 +142,7 @@ class App extends Component {
 
   getTotal(){
     let addedUp=0;
-    for(let i=0;i<this.state.questions[0].length;i++){
+    for(let i=1;i<this.state.questions[0].length;i++){
       addedUp = addedUp + this.state.questions[0][i][1];
     }
     return addedUp;
@@ -179,13 +181,13 @@ class App extends Component {
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
+        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion == '1') ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion -1}</strong> of <strong>{this.state.maxQuestions-1}</strong></p>
       </section>
       <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
         <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
         <SocialShare reactClickEvent={this.reactClickEvent}/>
-        <img src={bestof} className="bestfirms" alt="ACT Best Firms 2018"/>
+        <img src={bestof} className="bestfirms cf" alt="ACT Best Firms 2018"/>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
       style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
@@ -200,8 +202,7 @@ class App extends Component {
               answers={obj.answers}
               currentSlide={this.state.currentquestion}
               answered={this.state.questions[0][key][0]}
-              yes={this.state.questions[0][key][1]}
-              no={this.state.questions[0][key][2]}
+              response={this.state.questions[0][key][1]}
               updateStatus={this.updateStatus.bind(this)}
               >
             </Question>)

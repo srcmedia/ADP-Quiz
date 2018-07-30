@@ -34,36 +34,36 @@ class Question extends Component{
         const answers = this.props.answers;
 
         return(
-            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + (this.props.answered === 1 && this.props.currentSlide!= 0 ? ' answered' : '' )}>
+            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + ((this.props.answered === 1 && this.props.currentSlide !== 0) ? ' answered' : '' )}>
                 <h2>{this.props.text}</h2>
                 <div className="inputselect">
-                    {answers !== undefined ? 
+                    {answers !== undefined && 
                         (
                             <ul>
                                 {answers.map((obj, key)=>
                                     <li>
-                                        <div className={this.props.initialanswer===key ? 'fakeRadio--active' : 'fakeRadio'} 
+                                        <input type="radio" name={this.props.index} className={this.props.initialanswer===key ? 'fakeRadio--active' : 'fakeRadio'} 
                                          onClick={this.radioClick.bind(this, key)}
-                                            ></div> 
+                                            value={key}></input> 
                                             <label>{obj.title}</label> 
                                     </li>
                                 )} 
                             </ul>
                         )
-                        :
-                        (<ul>
-                            <li>
-                                <div className={this.props.yes===1 ? 'fakeRadio--active' : 'fakeRadio'} 
-                                    onClick={this.radioClick.bind(this, 1)}
-                                    ></div> 
-                                    <label>Yes</label> 
-                                </li>
-                            <li>
-                                <div className={this.props.no===1 ? 'fakeRadio--active' : 'fakeRadio'} 
-                                    onClick={this.radioClick.bind(this, 2)}></div> <label>No</label> 
-                                </li>
-                        </ul>   
-                        )
+                        // :
+                        // (<ul>
+                        //     <li>
+                        //         <div className={this.props.response===0 ? 'fakeRadio--active' : 'fakeRadio'} 
+                        //             onClick={this.radioClick.bind(this, 0)}
+                        //             ></div> 
+                        //             <label>Yes</label> 
+                        //         </li>
+                        //     <li>
+                        //         <div className={this.props.response===1 ? 'fakeRadio--active' : 'fakeRadio'} 
+                        //             onClick={this.radioClick.bind(this, 1)}></div> <label>No</label> 
+                        //         </li>
+                        // </ul>   
+                        // )
                     }
                     
                     {this.props.takeaway !== "" &&

@@ -30,6 +30,7 @@ p,li{
   background-color:#fff;
   min-height:800px;
   position: relative;
+  display:block;
 }
 
 .wrapper:after {
@@ -44,7 +45,7 @@ header{
   padding: 21px 50px;
 }
 
-section{
+section{ 
   padding:20px 50px;
 }
 
@@ -109,7 +110,6 @@ header span{
   opacity:.6;
   cursor: pointer;
 }
-
 .counter{
   font-family: ArialMT;
   font-size: 16px;
@@ -118,7 +118,6 @@ header span{
   position: relative;
   top: 11px;
 }
-
 h2{
     /* Does your firm allow: */
   font-family: 'Rokkitt', serif;
@@ -144,7 +143,6 @@ h2{
   position: relative;
   margin: 0 auto;
 }
-
 h3{
   font-family: 'Rokkitt', serif;
   font-size: 32px;
@@ -158,6 +156,7 @@ h3 span{
 }
 .quiztitle{
   float:left;
+  font-family: ArialMT;
 }
 .questions{
   clear:both;
@@ -171,7 +170,6 @@ h3 span{
 .intro{
   position:absolute;
   width:100%;
-  height:450px;
   z-index:99;
   transition: opacity .5s, visibility .5s;
 }
@@ -220,9 +218,7 @@ h3 span{
   transition: left 1.5s, opacity .5s;
  
 }
-.fakeRadio,
-.fakeRadio--active
-{
+.fakeRadio{
   border:1px solid #68B545;
   height:20px;
   width:20px;
@@ -234,7 +230,7 @@ h3 span{
   float:left;
   cursor: pointer;
 }
-.fakeRadio--active:after{
+.fakeRadio:checked:after{
   content:'';
   background: #68B545;
   height:10px;
@@ -287,7 +283,7 @@ h3 span{
 }
 .card ul li label{
   position: relative;
-  top:-5px;
+  top:-2px;
 }
 .card.answered ul{
   top:-200px;
@@ -460,7 +456,7 @@ p.copyright{
 }
  button{
       /* Rectangle 77: */
-    background: #68B545;
+    background: #68B545!important;
     /* Submit: */
     font-family: Arial-BoldMT;
     font-size: 16px;
@@ -525,7 +521,9 @@ form[id^="mktoForm_"]{width:100%!important;}
     font-size:9px;
     float:right;
     margin:-2px 0 5px;
-
+  }
+  .wrapper{
+    min-height:900px;
   }
   .bluebar{
     background-size:cover;
@@ -535,7 +533,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     float: inherit;
     margin: 0 auto;
     position: relative;
-    
+    display: block;
   }
   section{
     padding:20px;
@@ -545,7 +543,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     color: #777777;
     letter-spacing: 0;
     line-height: 18px;
-    font-family: Arial;
+    font-family: ArialMT;
     margin-bottom: 0px;    
   }
   .card,
@@ -553,7 +551,11 @@ form[id^="mktoForm_"]{width:100%!important;}
     display:block;
     padding:0 20px;
   }
-
+  .card h2::before{
+    position: relative;
+    left: auto;
+    margin: 0 auto;
+  }
   .card h2,
   h2{
     font-size: 26px;
