@@ -1,121 +1,150 @@
 {
-    "title": "10 Indicators of a Leading Firm, How Does Your Firm Rank?",
+    "title": "Is your HR and talent strategy among best of the best?",
     "questions": [
             {
-                "question": "What's your firm size?",
+                "question": "Your firm offers paid time off for community service activities or volunteer work to encourage associates to give back to their community.",
                 "weight": 1,
-                "takeaway": "",
-                "marketoTrack":"aCTADPQuizQ0FirmSize",
-                "answers":[
-                    {"title":"A small firm (up to 49 employees)"},
-                    {"title":"A mid-sized firm (between 50 and 249 associates)"}, 
-                    {"title":"A large firm (250 or more employees)"}
-                ]
-            },
-            {
-                "question": "Does your firm allow paid time off for community service activities or volunteer work?",
-                "weight": 1,
-                "takeaway": "Younger staff in particular are likely to expect their employer to support charitable activities.",
+                "takeaway": [
+                    {"text":"More than half of small firms (57%) offer employees paid time off for community service activities or volunteer work. This is a great benefit as volunteering can make your associates feel like they are making a social impact through their work, and they’ll feel more satisfied and engaged. It also demonstrates your organization’s commitment to your community."},
+                    {"text":"Well over half of mid-size firms (66%) offer employees paid time off for community service activities or volunteer work. This is a great benefit as volunteering can make your associates feel like they are making a social impact through their work, and they’ll feel more satisfied and engaged."},
+                    {"text":"The majority of large firms (94%) offer employees paid time off for community service activities or volunteer work. This is a great benefit as volunteering can make your associates feel like they are making a social impact through their work, and they’ll feel more satisfied and engaged."}
+                ],
                 "marketoTrack": "aCTADPQuizQ1CommunityService",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm offer telecommuting options to staff?",
+                "question": "In today’s tech-driven environment, your firm offers associates the ability to telecommute.",
                 "weight": 1,
-                "takeaway": "It's important that telecommuting options be regularly available – not just for special occasions or only some individuals.",
+                "takeaway": [
+                    {"text":"Sixty-two percent of small firms offer telecommuting options to their staff. Providing this flexible work option and technologies that support mobility can help your firm attract and retain top talent as many professionals believe they can be more productive working remotely than in a traditional office. Plus, this enables your firm to hire top talent regardless of their location."},
+                    {"text":"Sixty-six percent of mid-size firms offer telecommuting options to their staff. Providing this flexible work option can help your firm attract and retain top talent as many professionals believe they can be more productive working remotely than in a traditional office. Plus, this enables your firm to hire top talent regardless of their location"},
+                    {"text":" Most large firms (89%) offer telecommuting options to their staff. Providing this flexible work option can help your firm attract and retain top talent as many professionals believe they can be more productive working remotely than in a traditional office. Plus, this enables your firm to hire top talent regardless of their location."}
+                ],
                 "marketoTrack":"aCTADPQuizQ2Telecommuting",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm provide any fitness or wellness programs?",
+                "question": "Your firm offers fitness or wellness programs to help associates achieve and maintain a healthy lifestyle.",
                 "weight": 1,
-                "takeaway": "Helping staff stay fit and healthy isn't just good for them – it can reduce sick days, and may even lead to lower insurance costs.",
+                "takeaway": [
+                    {"text":"Thirty-three percent of small firms offer their associates fitness or wellness programs. Offering such benefits can help your employees feel happier and healthier and be more productive. To help drive involvement, consider how you can incentivize participation (competitions, gift cards, etc.), make it more convenient, and leverage technology (apps, fitness trackers, etc.)."},
+                    {"text":"Roughly half of mid-size firms (53%) offer their associates fitness or wellness programs. Offering such benefits can help your employees feel happier and healthier and be more productive. To help drive involvement, consider how you can incentivize participation (competitions, gift cards, etc.), make it more convenient, and leverage technology (apps, fitness trackers, etc.)."},
+                    {"text":"Well over half of large firms (67%) offer their associates fitness or wellness programs. Offering such benefits can help your employees feel happier and healthier and be more productive. To help drive involvement, consider how you can incentivize participation (competitions, gift cards, etc.), make it more convenient, and leverage technology (apps, fitness trackers, etc.)."}
+                ],
                 "marketoTrack": "aCTADPQuizQ3Fitness",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Are staff members' immediate families invited to firm events?",
+                "question": "At your company, firm events are a family affair and immediate family members are welcome to attend.",
                 "weight": 1,
-                "takeaway": "More and more firms are reaching out to include employees' families.",
+                "takeaway": [
+                    {"text":"Seventy-five percent of small firms invite associates’ immediate family to firm events, which demonstrates to staff that it’s not always just about business. Extending the invite to your employees’ immediate family can help instill a sense of belonging, boost overall employee happiness and show appreciation for their support of the family member’s time and other contributions to your business."},
+                    {"text":"The majority of mid-size firms (88%) show that it’s not always just about business by inviting employees’ immediate family to firm events. Extending the invite to your employees’ immediate family can help instill a sense of belonging and boost overall employee happiness."},
+                    {"text":"Many large firms (78%) invite employees’ immediate family to attend firm events, which demonstrates to staff that it’s not always just about business. This can help instill a sense of belonging among employees and boost overall employee happiness."}
+                ],
                 "marketoTrack": "aCTADPQuizQ4FirmEvents",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm offer tuition reimbursement or assistance for additional degrees or credentials?",
+                "question": "Your firm emphasizes professional development and offers employees tuition reimbursement or assistance for additional degrees or credentials.",
                 "weight": 1,
-                "takeaway": "Support for advanced degrees like MBAs or LLMs, and for specialty credentials are a much-appreciated part of staff development.",
+                "takeaway": [
+                    {"text":"Many small firms go big when it comes to professional development. Seventy-one percent say they offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession. This can also help small firms attract talent from mid to large firms."},
+                    {"text":"Many mid-size firms (69%) offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession. Given how the industry is changing and adapting, making it easier for employees to add new skills is also critical to the firm’s ongoing success."},
+                    {"text":"Professional development is a significant focus for large firms as 100% offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession."}
+                ],
                 "marketoTrack": "aCTADPQuizQ5TuitionReimbursement",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm have any formalized succession planning programs or practices?",
+                "question": "Has your firm made succession planning a priority with the establishment of a formalized succession planning program or practice?",
                 "weight": 1,
-                "takeaway": "Uncertainty surrounding the future leadership of the firm – or even a department – can drive staff away.",
+                "takeaway": [
+                    {"text":""},
+                    {"text":""},
+                    {"text":""}
+                ],
                 "marketoTrack": "aCTADPQuizQ6SuccessionPlanning",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm offer flexible hours or compressed work weeks as an option?",
+                "question": "Does your firm offer employees flexible hours or compressed work weeks to help gain a greater work/life balance?",
                 "weight": 1,
-                "takeaway": "Flexible hours are a cornerstone of work-life balance that no firm can afford to ignore.",
+                "takeaway": [
+                    {"text":"Less than half of small firms (40%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
+                    {"text":"More than half of mid-size firms (59%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
+                    {"text":"Sixty-seven percent of large firms have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."}
+                ],
                 "marketoTrack": "aCTADPQuizQ7FlexibleHours",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm offer personal development or stress management workshops, seminars or classes?",
+                "question": "Does your firm help employees better manage stress with personal development classes or workshops? ",
                 "weight": 1,
-                "takeaway": "Staff expect employers to help them grow, and to manage the stress of their jobs.",
+                "takeaway": [
+                    {"text":"The majority of small firms (81%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
+                    {"text":"Seventy-five percent of mid-size firms offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
+                    {"text":"The majority of large firms (89%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."}
+                ],
                 "marketoTrack": "aCTADPQuizQ8PersonalDevelopment",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm match employee contributions to a retirement savings plans account?",
+                "question": "Your firm helps employees better prepare for their financial future by matching employee contributions to a retirement savings plan account.",
                 "weight": 1,
-                "takeaway": "It's not enough to just have a retirement savings plan – staff expect their employers to help with contributions.",
+                "takeaway": [
+                    {"text":"Nearly half of small firms (49%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
+                    {"text":"More than half of mid-size firms (59%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
+                    {"text":"Most large firms (89%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."}
+                ],
                 "marketoTrack": "aCTADPQuizQ9FirmMatch",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             },
             {
-                "question": "Does your firm share information on how it is doing financially with staff?",
+                "question": "Your firm keeps its employees in the know by sharing information on the company’s financial health. ",
                 "weight": 1,
-                "takeaway": "Younger generations of employees don't want to be kept in the dark about how their firm is performing.",
+                "takeaway": [
+                    {"text":"Well over half of small firms (67%) match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions and overall financial wellness. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
+                    {"text":"Seventy-two percent of mid-size firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
+                    {"text":"Seventy-eight percent of large firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."}
+                ],
                 "marketoTrack":"aCTADPQuizQ10ShareInformation",
                 "answers":[
-                    {"title":"Yes"},
-                    {"title":"No"}
+                    {"option":"Yes"},
+                    {"option":"No"}
                 ]
             }
         ],
         "results":[
                 {
-                "title": "You answered &quot;Yes&quot; to 0-3 out of 10",
+                "option": "You answered &quot;Yes&quot; to 0-3 out of 10",
                 "summation": "Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP has tons of awesome resources to help make you an Employer of Choice! Here are a number of places to start! Visit us at adp.com/accountant."
                 }
         ]

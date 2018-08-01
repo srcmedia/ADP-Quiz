@@ -19,7 +19,7 @@ class Question extends Component{
         if(this.props.currentSlide-1===this.props.index && inClass === undefined){
             response = response+" current";
         }
-        if(inClass !==undefined && this.props.currentSlide!==0 ){
+        if(inClass !==undefined && this.props.currentSlide !==0 ){
             response = response + " answered meow";
         }
         if(this.props.currentSlide-1!==this.props.index){
@@ -45,7 +45,7 @@ class Question extends Component{
                                         <input type="radio" name={this.props.index} className={this.props.initialanswer===key ? 'fakeRadio--active' : 'fakeRadio'} 
                                          onClick={this.radioClick.bind(this, key)}
                                             value={key}></input> 
-                                            <label>{obj.title}</label> 
+                                            <label>{obj.option}</label> 
                                     </li>
                                 )} 
                             </ul>
@@ -69,7 +69,7 @@ class Question extends Component{
                     {this.props.takeaway !== "" &&
                         <div className="takeaway">
                             <h4>Takeaway:</h4>
-                            <p>{this.props.takeaway}</p>
+                            {/* <p>{this.props.takeaway}</p> */}
                         </div>  
                     }
                 </div>

@@ -28,7 +28,7 @@ p,li{
   width:100%;
   border:2px solid #efefef;
   background-color:#fff;
-  min-height:800px;
+  min-height:830px;
   position: relative;
   display:block;
 }
@@ -177,6 +177,14 @@ h3 span{
   opacity: 0;
   visibility:hidden;
 }
+.intro p{
+  font-family: Rokkitt;
+  font-size: 23px;
+  line-height: 27px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
 .bestfirms{
   width: 143px;
   height: 144px;
@@ -538,6 +546,8 @@ form[id^="mktoForm_"]{width:100%!important;}
   section{
     padding:20px;
   }
+
+
   h3.quiztitle{
     font-size: 14px;
     color: #777777;
@@ -545,6 +555,13 @@ form[id^="mktoForm_"]{width:100%!important;}
     line-height: 18px;
     font-family: ArialMT;
     margin-bottom: 0px;    
+  }
+  .intro p{
+    font-family: Rokkitt;
+    font-size: 18px;
+    line-height: 23px;
+    max-width: 700px;
+    margin: 0 auto 40px;
   }
   .card,
   .card.current{

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Prelim from './prelim';
 import Question from './question.js';
 import Results from './results.js';
 import SocialShare from './socialshare.js';
 import questiondata from './questions.json';
+import prelimdata from './prelim.json';
 import bestof from './ACTBestFirms.png';
 
 
@@ -20,9 +22,11 @@ class App extends Component {
     super(props);
     this.state = {
       splashDisplay: true,
+      prelimDisplay: false,
       title: null,
       currentquestion: 1,
       maxQuestions: 0,
+      firmSize: 0,
       questions: this.buildQuestions(questiondata.questions),
       quizComplete: false 
     };
@@ -38,7 +42,10 @@ class App extends Component {
   StartQuiz(){
     this.reactClickEvent('Start');
     this.setState((prevState)=>{
-      return {splashDisplay: false}
+      return { 
+        splashDisplay: false,
+        prelimDisplay: true  
+      }
     });
   }
 
@@ -160,6 +167,7 @@ class App extends Component {
     return (
       <div className="wrapper">
       <header>
+        
         <a href="/">
           <img 
           src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
@@ -181,10 +189,10 @@ class App extends Component {
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion == '1') ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion -1}</strong> of <strong>{this.state.maxQuestions-1}</strong></p>
+        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion == '0') ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
       </section>
       <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
-        <h3>See how your firm stacks up against the cream of the crop – this quick, 10-question quiz, based on a decades' worth of data from Accounting Today's Best Firms to Work For, will tell you how much of a workplace of choice you really have.</h3>
+      <p>Each year, Accounting Today conducts its “Best Accounting Firms to Work For” survey and recognition program to find and recognize the best employers within the accounting industry. Based on the factors that differentiate the top 100 winners of the Best Firms to Work For award from other firms, we developed, in partnership with ADP, this fun and easy quiz to help you see how your firm stacks up. Take a few moments to answer 10 quick questions to see if your firm is one of the best places to work in accounting and how it compares with similar-sized firms in the industry. Then download resources and information that can help you on your way to being the&nbsp;best.</p>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
         <SocialShare reactClickEvent={this.reactClickEvent}/>
         <img src={bestof} className="bestfirms cf" alt="ACT Best Firms 2018"/>
@@ -192,6 +200,21 @@ class App extends Component {
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
       style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
       >
+        {prelimdata.questions.map((obj,key)=>
+          <Prelim 
+          text={obj.question} 
+          key={key} 
+          index={key} 
+          takeaway={obj.takeaway}
+          marketoTrack={obj.marketoTrack}
+          answers={obj.answers}
+          currentSlide={this.state.currentquestion}
+          answered={this.state.questions[0][key][0]}
+          response={this.state.questions[0][key][1]}
+          updateStatus={this.updateStatus.bind(this)}
+          >
+        </Prelim>)
+        }
         {questiondata.questions.map((obj, key)=>
           <Question 
               text={obj.question} 
@@ -248,7 +271,7 @@ class App extends Component {
       <div className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'controllers--hidden' : 'controllers--displayed'}>
         {this.state.currentquestion>1 && <a className="previous" onClick={this.prevClick.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>} <a className="next" onClick={this.nextClick.bind(this)}>Next</a>
       </div>
-
+      <p>Debug stuff: {this.state.currentquestion} firmsize: {this.state.firmSize}</p>
       </div>
     );
   }
