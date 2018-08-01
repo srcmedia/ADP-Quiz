@@ -5,7 +5,10 @@
 }
 
 body{
-  background-color:#F9F9F9;
+  /* background-color:#F9F9F9; */
+  background-image: url(./adp_bkg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 p,li{
   margin: 0;
@@ -17,6 +20,7 @@ p,li{
   display: table;
   clear: both;
 }
+
 .wrapper{
   max-width:1400px; 
   margin: 0 auto;
@@ -24,8 +28,9 @@ p,li{
   width:100%;
   border:2px solid #efefef;
   background-color:#fff;
-  min-height:800px;
+  min-height:830px;
   position: relative;
+  display:block;
 }
 
 .wrapper:after {
@@ -40,7 +45,7 @@ header{
   padding: 21px 50px;
 }
 
-section{
+section{ 
   padding:20px 50px;
 }
 
@@ -63,9 +68,11 @@ header span{
   text-transform: uppercase;
   float:right;
 }
+
 .mobile--only{
   display:none;
 }
+
 .desktop--only{
   display:block;
 }
@@ -75,8 +82,8 @@ header span{
 }
 
 .bluebar{
-  background-image: url('https://source-media-brightspot-lower.s3.amazonaws.com/22/28/5ff5d8994384bcea75f8b85cf660/confetti-desktop.png');
-  height:190px;
+  background-image: url('./confetti.png');
+  height:120px;
   width:100%;
   /* background-size: cover; */
 }
@@ -86,7 +93,7 @@ header span{
   font-weight: 700;
   margin-top:50px;
   position: relative;
-  display: block;
+  display: inline-block;
 }
 .share--item{
   height: 25px;
@@ -94,7 +101,7 @@ header span{
   margin-right: 5px;
   top: 6px;
   position: relative;
-  color:#64BEEB;
+  color:#68B545;
 }
 .share--item:first-of-type{
   margin-left:10px;
@@ -125,6 +132,17 @@ h2{
   max-width:600px;
   margin: 0 auto 50px;
 }
+
+.intro h3::before{
+  display:block;
+  height: 6px;
+  width: 120px;
+  background-color: #68B545;
+  content: "";
+  top:-20px;
+  position: relative;
+  margin: 0 auto;
+}
 h3{
   font-family: 'Rokkitt', serif;
   font-size: 32px;
@@ -138,9 +156,9 @@ h3 span{
 }
 .quiztitle{
   float:left;
+  font-family: ArialMT;
 }
-.questions
-{
+.questions{
   clear:both;
   position: relative;
   overflow:hidden;
@@ -152,7 +170,6 @@ h3 span{
 .intro{
   position:absolute;
   width:100%;
-  height:450px;
   z-index:99;
   transition: opacity .5s, visibility .5s;
 }
@@ -160,6 +177,20 @@ h3 span{
   opacity: 0;
   visibility:hidden;
 }
+.intro p{
+  font-family: Rokkitt;
+  font-size: 23px;
+  line-height: 27px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.bestfirms{
+  width: 143px;
+  height: 144px;
+  float: right;
+}
+
 .results{
   position: relative;
   display:block;
@@ -169,7 +200,7 @@ h3 span{
 }
 .questions.hidden,
 .results.hidden{
-  visibility: hidden;
+  display: none;
   opacity:0;
   z-index:-1;
 }
@@ -195,10 +226,8 @@ h3 span{
   transition: left 1.5s, opacity .5s;
  
 }
-.fakeRadio,
-.fakeRadio--active
-{
-  border:1px solid #64BEEB;
+.fakeRadio{
+  border:1px solid #68B545;
   height:20px;
   width:20px;
   border-radius: 10px;
@@ -209,9 +238,9 @@ h3 span{
   float:left;
   cursor: pointer;
 }
-.fakeRadio--active:after{
+.fakeRadio:checked:after{
   content:'';
-  background: #64BEEB;
+  background: #68B545;
   height:10px;
   width:10px;
   top:4px;
@@ -235,6 +264,15 @@ h3 span{
   display:inline-block;
   position:relative;
 }
+.card h2::before{
+  display:block;
+  height: 6px;
+  width: 120px;
+  background-color: #68B545;
+  content: "";
+  top:-20px;
+  position: absolute;
+}
 .card ul{
   list-style: none;
   padding:0;
@@ -253,7 +291,7 @@ h3 span{
 }
 .card ul li label{
   position: relative;
-  top:-5px;
+  top:-2px;
 }
 .card.answered ul{
   top:-200px;
@@ -281,7 +319,7 @@ h3 span{
 .takeaway h4{
   font-family: 'Rokkitt', serif;  
   font-size: 52px;
-  color: #64BEEB;
+  color: #68B545;
   margin: 0 0 10px;
 }
 
@@ -319,13 +357,13 @@ h3 span{
 .previous,
 .next{
   cursor: pointer;
-  color: #64BEEB;
+  color: #68B545;
   line-height:26px; 
 }
 
 .previous:hover,
 .next:hover{
-  color:rgba(100,190,235,.7);
+  opacity:.7;
 }
 
 .previous{
@@ -333,7 +371,7 @@ h3 span{
   font-size: 16px; 
   position: relative;
   top: -3px;
-  border-right:2px solid #64BEEB;
+  border-right:2px solid #68B545;
   height: 26px;
   padding-right:10px;
   display: inline-block;
@@ -426,7 +464,7 @@ p.copyright{
 }
  button{
       /* Rectangle 77: */
-    background: #64BEEB;
+    background: #68B545!important;
     /* Submit: */
     font-family: Arial-BoldMT;
     font-size: 16px;
@@ -464,7 +502,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     padding:20px 30px;
   }
   .bluebar{
-    height:142px;
+    height:72px;
     background-size: cover;
   }
   .site-logo{
@@ -491,29 +529,50 @@ form[id^="mktoForm_"]{width:100%!important;}
     font-size:9px;
     float:right;
     margin:-2px 0 5px;
-
+  }
+  .wrapper{
+    min-height:900px;
   }
   .bluebar{
     background-size:cover;
+    height:40px;
+  }
+  .bestfirms{
+    float: inherit;
+    margin: 0 auto;
+    position: relative;
+    display: block;
   }
   section{
     padding:20px;
   }
+
+
   h3.quiztitle{
     font-size: 14px;
     color: #777777;
     letter-spacing: 0;
     line-height: 18px;
-    font-family: Arial;
+    font-family: ArialMT;
     margin-bottom: 0px;    
   }
-  
+  .intro p{
+    font-family: Rokkitt;
+    font-size: 18px;
+    line-height: 23px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
   .card,
   .card.current{
     display:block;
     padding:0 20px;
   }
-
+  .card h2::before{
+    position: relative;
+    left: auto;
+    margin: 0 auto;
+  }
   .card h2,
   h2{
     font-size: 26px;
@@ -530,9 +589,6 @@ form[id^="mktoForm_"]{width:100%!important;}
   .inputselect{
     width:100%;
     clear:left;
-  }
-  .bluebar{
-    height:70px;
   }
   .counter{
     width:100%;
@@ -594,7 +650,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     order:1;
   }
   .previous{
-    border-top:1px solid #64BEEB;
+    border-top:1px solid #68B545;
     border-right:none;
     margin-top:5px;
     padding:10px 0 0;
