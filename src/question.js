@@ -34,7 +34,7 @@ class Question extends Component{
         const answers = this.props.answers;
 
         return(
-            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index ? ' current' : '') + ((this.props.answered === 1 && this.props.currentSlide !== 0) ? ' answered' : '' )}>
+            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index && this.props.prelimdisplay === false ? ' current' : '') + ((this.props.answered === 1 && this.props.currentSlide !== 0) ? ' answered' : '' )}>
                 <h2>{this.props.text}</h2>
                 <div className="inputselect">
                     {answers !== undefined && 

@@ -64,7 +64,16 @@ class App extends Component {
   }
 
   nextClick(){
-    if(this.state.currentquestion < this.state.maxQuestions && this.state.questions[0][this.state.currentquestion-1][0]===1){
+    if(this.state.prelimDisplay===true){
+      this.setState((prevState)=>{
+        return {
+            prelimDisplay: false,
+        }
+      }
+    )
+    console.log(this.state.prelimDisplay);
+    }
+    if(this.state.currentquestion < this.state.maxQuestions && this.state.questions[0][this.state.currentquestion-1][0]===1 && this.state.prelimDisplay===false){
       let newArray = this.state.questions;
       newArray[0][this.state.currentquestion][0]=0;
       newArray[0][this.state.currentquestion][1]=0;
@@ -116,7 +125,12 @@ class App extends Component {
       }
     }
   }
-
+  updateFirmSize(key, choice){
+    this.setState((orevstate)=>{
+      return{firmSize: choice}
+    });
+    console.log("pew pew");
+  }
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
     let trackedKey = key + 1;
@@ -139,6 +153,7 @@ class App extends Component {
     }
     console.log(this.state.questions);
   }
+
 
   buildQuestions(questionsObject){
     //FORMAT!!  Answered Yes No 
@@ -208,10 +223,11 @@ class App extends Component {
           takeaway={obj.takeaway}
           marketoTrack={obj.marketoTrack}
           answers={obj.answers}
+          prelimdisplay={this.state.prelimDisplay}
           currentSlide={this.state.currentquestion}
           answered={this.state.questions[0][key][0]}
           response={this.state.questions[0][key][1]}
-          updateStatus={this.updateStatus.bind(this)}
+          updateFirmSize={this.updateFirmSize.bind(this)}
           >
         </Prelim>)
         }
@@ -223,6 +239,7 @@ class App extends Component {
               takeaway={obj.takeaway}
               marketoTrack={obj.marketoTrack}
               answers={obj.answers}
+              prelimdisplay={this.state.prelimDisplay}
               currentSlide={this.state.currentquestion}
               answered={this.state.questions[0][key][0]}
               response={this.state.questions[0][key][1]}

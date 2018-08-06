@@ -226,7 +226,7 @@ h3 span{
   transition: left 1.5s, opacity .5s;
  
 }
-.fakeRadio{
+input[type="radio"]{
   border:1px solid #68B545;
   height:20px;
   width:20px;
@@ -238,7 +238,7 @@ h3 span{
   float:left;
   cursor: pointer;
 }
-.fakeRadio:checked:after{
+input[type="radio"]:checked:after{
   content:'';
   background: #68B545;
   height:10px;
