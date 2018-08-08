@@ -75,9 +75,9 @@
                 "question": "Has your firm made succession planning a priority with the establishment of a formalized succession planning program or practice?",
                 "weight": 1,
                 "takeaway": [
-                    {"text":""},
-                    {"text":""},
-                    {"text":""}
+                    {"text":"Less than half of small firms (40%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
+                    {"text":"More than half of mid-size firms (59%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
+                    {"text":"Sixty-seven percent of large firms have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."}
                 ],
                 "marketoTrack": "aCTADPQuizQ6SuccessionPlanning",
                 "answers":[
@@ -89,9 +89,9 @@
                 "question": "Does your firm offer employees flexible hours or compressed work weeks to help gain a greater work/life balance?",
                 "weight": 1,
                 "takeaway": [
-                    {"text":"Less than half of small firms (40%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
-                    {"text":"More than half of mid-size firms (59%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
-                    {"text":"Sixty-seven percent of large firms have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."}
+                    {"text":"The majority of small firms (81%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
+                    {"text":"Seventy-five percent of mid-size firms offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
+                    {"text":"The majority of large firms (89%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."}
                 ],
                 "marketoTrack": "aCTADPQuizQ7FlexibleHours",
                 "answers":[
@@ -103,9 +103,9 @@
                 "question": "Does your firm help employees better manage stress with personal development classes or workshops? ",
                 "weight": 1,
                 "takeaway": [
-                    {"text":"The majority of small firms (81%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
-                    {"text":"Seventy-five percent of mid-size firms offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
-                    {"text":"The majority of large firms (89%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."}
+                    {"text":"Nearly half of small firms (49%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
+                    {"text":"More than half of mid-size firms (59%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
+                    {"text":"Most large firms (89%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."}
                 ],
                 "marketoTrack": "aCTADPQuizQ8PersonalDevelopment",
                 "answers":[
@@ -117,9 +117,9 @@
                 "question": "Your firm helps employees better prepare for their financial future by matching employee contributions to a retirement savings plan account.",
                 "weight": 1,
                 "takeaway": [
-                    {"text":"Nearly half of small firms (49%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
-                    {"text":"More than half of mid-size firms (59%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
-                    {"text":"Most large firms (89%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."}
+                    {"text":"Well over half of small firms (67%) match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions and overall financial wellness. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
+                    {"text":"Seventy-two percent of mid-size firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
+                    {"text":"Seventy-eight percent of large firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."}
                 ],
                 "marketoTrack": "aCTADPQuizQ9FirmMatch",
                 "answers":[

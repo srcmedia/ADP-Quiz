@@ -73,7 +73,9 @@ class App extends Component {
     )
     console.log(this.state.prelimDisplay);
     }
-    if(this.state.currentquestion < this.state.maxQuestions && this.state.questions[0][this.state.currentquestion-1][0]===1 && this.state.prelimDisplay===false){
+    if(this.state.currentquestion < this.state.maxQuestions 
+        && this.state.questions[0][this.state.currentquestion-1][0]===1 
+        && this.state.prelimDisplay===false){
       let newArray = this.state.questions;
       newArray[0][this.state.currentquestion][0]=0;
       newArray[0][this.state.currentquestion][1]=0;
@@ -84,7 +86,8 @@ class App extends Component {
           };
       });
     }
-    else if(this.state.currentquestion === this.state.maxQuestions && this.state.questions[0][this.state.currentquestion-1][0]===1){
+    else if(this.state.currentquestion === this.state.maxQuestions 
+            && this.state.questions[0][this.state.currentquestion-1][0]===1){
       this.reactClickEvent('Complete');
       this.setState((prevState)=>{
         return {quizComplete: true}
@@ -204,7 +207,7 @@ class App extends Component {
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion == '0') ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
+        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion == '0' || this.state.prelimDisplay === true) ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
       </section>
       <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
       <p>Each year, Accounting Today conducts its “Best Accounting Firms to Work For” survey and recognition program to find and recognize the best employers within the accounting industry. Based on the factors that differentiate the top 100 winners of the Best Firms to Work For award from other firms, we developed, in partnership with ADP, this fun and easy quiz to help you see how your firm stacks up. Take a few moments to answer 10 quick questions to see if your firm is one of the best places to work in accounting and how it compares with similar-sized firms in the industry. Then download resources and information that can help you on your way to being the&nbsp;best.</p>
@@ -236,7 +239,7 @@ class App extends Component {
               text={obj.question} 
               key={key} 
               index={key} 
-              takeaway={obj.takeaway}
+              takeaway={obj.takeaway[this.state.firmSize].text}
               marketoTrack={obj.marketoTrack}
               answers={obj.answers}
               prelimdisplay={this.state.prelimDisplay}

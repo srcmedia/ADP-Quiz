@@ -224,7 +224,7 @@ h3 span{
   padding: 0px 50px 20px;
   opacity:0;
   transition: left 1.5s, opacity .5s;
- 
+  min-height: 100%;
 }
 input[type="radio"]{
   border:1px solid #68B545;

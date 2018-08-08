@@ -50,26 +50,12 @@ class Question extends Component{
                                 )} 
                             </ul>
                         )
-                        // :
-                        // (<ul>
-                        //     <li>
-                        //         <div className={this.props.response===0 ? 'fakeRadio--active' : 'fakeRadio'} 
-                        //             onClick={this.radioClick.bind(this, 0)}
-                        //             ></div> 
-                        //             <label>Yes</label> 
-                        //         </li>
-                        //     <li>
-                        //         <div className={this.props.response===1 ? 'fakeRadio--active' : 'fakeRadio'} 
-                        //             onClick={this.radioClick.bind(this, 1)}></div> <label>No</label> 
-                        //         </li>
-                        // </ul>   
-                        // )
                     }
                     
                     {this.props.takeaway !== "" &&
                         <div className="takeaway">
                             <h4>Takeaway:</h4>
-                            {/* <p>{this.props.takeaway}</p> */}
+                            <p>{this.props.takeaway}</p>
                         </div>  
                     }
                 </div>
