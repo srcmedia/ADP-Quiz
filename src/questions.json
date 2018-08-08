@@ -131,9 +131,9 @@
                 "question": "Your firm keeps its employees in the know by sharing information on the company’s financial health. ",
                 "weight": 1,
                 "takeaway": [
-                    {"text":"Well over half of small firms (67%) match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions and overall financial wellness. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
-                    {"text":"Seventy-two percent of mid-size firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
-                    {"text":"Seventy-eight percent of large firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."}
+                    {"text":"Less than half of small firms (43%) share information on how they are doing financially with staff. Sharing information on the firm’s financial health can help staff better understand how they can positively impact the financial performance of the firm."},
+                    {"text":"Less than half of mid-size firms (47%) share information on how they are doing financially with staff. Sharing information on the firm’s financial health can help staff better understand how they can positively impact the financial performance of the firm."},
+                    {"text":"Most large firms (89%) share information on how they are doing financially with staff. Sharing information on the firm’s financial health can help staff better understand how they can positively impact the financial performance of the firm.."}
                 ],
                 "marketoTrack":"aCTADPQuizQ10ShareInformation",
                 "answers":[
