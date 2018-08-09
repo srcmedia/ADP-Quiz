@@ -8,8 +8,6 @@ class Prelim extends Component{
             answered: 0
         }
     }
-
-
     checkStatus(inClass){
         let response = this.state.slideClass;
         if(this.props.currentSlide-1===this.props.index && inClass === undefined){
@@ -25,8 +23,8 @@ class Prelim extends Component{
     }
     radioClick(value){
         this.props.updateFirmSize(this.props.index, value);
+        this.props.gaTrack(answers.option[value]);
     }
-
     render(){
         const answers = this.props.answers;
 
@@ -37,8 +35,8 @@ class Prelim extends Component{
                     {answers !== undefined && 
                         (
                             <ul>
-                                {answers.map((obj, key)=>
-                                    <li>
+                                {answers.map((obj, key)=
+                                                                <li>
                                         <input type="radio" name={this.props.index} className="" 
                                          onClick={this.radioClick.bind(this, key)}
                                             value={key}></input> 

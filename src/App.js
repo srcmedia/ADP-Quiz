@@ -231,6 +231,7 @@ class App extends Component {
           answered={this.state.questions[0][key][0]}
           response={this.state.questions[0][key][1]}
           updateFirmSize={this.updateFirmSize.bind(this)}
+          gaTrack={this.reactClickEvent}
           >
         </Prelim>)
         }
@@ -247,6 +248,7 @@ class App extends Component {
               answered={this.state.questions[0][key][0]}
               response={this.state.questions[0][key][1]}
               updateStatus={this.updateStatus.bind(this)}
+              gaTrack={this.reactClickEvent}
               >
             </Question>)
         }

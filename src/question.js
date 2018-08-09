@@ -20,7 +20,7 @@ class Question extends Component{
             response = response+" current";
         }
         if(inClass !==undefined && this.props.currentSlide !==0 ){
-            response = response + " answered meow";
+            response = response + " answered";
         }
         if(this.props.currentSlide-1!==this.props.index){
             response="card";
@@ -29,6 +29,7 @@ class Question extends Component{
     }
     radioClick(value){
         this.props.updateStatus(this.props.index, value);
+        this.props.gaTrack(value === 0 ? "Yes":"No");
     }
     render(){ 
         const answers = this.props.answers;
