@@ -35,7 +35,7 @@ class Question extends Component{
         const answers = this.props.answers;
 
         return(
-            <div className={"card cf" + (this.props.currentSlide-1 === this.props.index && this.props.prelimdisplay === false ? ' current' : '') + ((this.props.answered === 1 && this.props.currentSlide !== 0) ? ' answered' : '' )}>
+            <div className={"questions card cf" + (this.props.currentSlide-1 === this.props.index && this.props.prelimdisplay === false ? ' current' : '') + ((this.props.answered === 1 && this.props.currentSlide !== 0) ? ' answered' : '' )}>
                 <h2>{this.props.text}</h2>
                 <div className="inputselect">
                     {answers !== undefined && 
@@ -43,7 +43,7 @@ class Question extends Component{
                             <ul>
                                 {answers.map((obj, key)=>
                                     <li>
-                                        <input type="radio" name={this.props.index} className={this.props.initialanswer===key ? 'fakeRadio--active' : 'fakeRadio'} 
+                                        <input type="radio" name={this.props.index} className={key===0 ? 'true' : 'false'} 
                                          onClick={this.radioClick.bind(this, key)}
                                             value={key}></input> 
                                             <label>{obj.option}</label> 

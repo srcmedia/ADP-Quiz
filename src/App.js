@@ -27,8 +27,9 @@ class App extends Component {
       currentquestion: 1,
       maxQuestions: 0,
       firmSize: 0,
+      total: 0,
       questions: this.buildQuestions(questiondata.questions),
-      quizComplete: false 
+      quizComplete: false,
     };
   }
   
@@ -71,7 +72,7 @@ class App extends Component {
         }
       }
     )
-    console.log(this.state.prelimDisplay);
+    console.log(this.state.total);
     }
     if(this.state.currentquestion < this.state.maxQuestions 
         && this.state.questions[0][this.state.currentquestion-1][0]===1 
@@ -90,7 +91,8 @@ class App extends Component {
             && this.state.questions[0][this.state.currentquestion-1][0]===1){
       this.reactClickEvent('Complete');
       this.setState((prevState)=>{
-        return {quizComplete: true}
+        return {quizComplete: true},
+        }
       });
       if(this.getTotal()<4){
         this.reactClickEvent('End Page Result 1');
@@ -139,12 +141,15 @@ class App extends Component {
     let trackedKey = key + 1;
     let currentMarketoTrack = questiondata.questions[key].marketoTrack;
     let injectedObj = new Object();
+    let newTotal = this.getTotal();
+    console.log(newTotal);
     if(key!==0){injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";}
     else{injectedObj[currentMarketoTrack] = choice;}
     newArray[0][key][0]=1;  //Answered
     newArray[0][key][choice] = 1;
     this.setState({
-      questions: newArray
+      questions: newArray,
+      total: newTotal
     });
     this.reactClickEvent('question: ' + trackedKey + ' choice: ' +choice);
     if( typeof MktoForms2 !== "undefined" ) {
@@ -154,7 +159,6 @@ class App extends Component {
           form.vals(injectedObj);
         });
     }
-    console.log(this.state.questions);
   }
 
 
@@ -166,10 +170,7 @@ class App extends Component {
   }
 
   getTotal(){
-    let addedUp=0;
-    for(let i=1;i<this.state.questions[0].length;i++){
-      addedUp = addedUp + this.state.questions[0][i][1];
-    }
+    let addedUp=document.querySelectorAll(".true:checked").length;
     return addedUp;
   }
   reactClickEvent(eventLabel){
@@ -185,7 +186,7 @@ class App extends Component {
     return (
       <div className="wrapper">
       <header>
-        
+        <p>{this.state.total}</p>
         <a href="/">
           <img 
           src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
@@ -252,31 +253,16 @@ class App extends Component {
               >
             </Question>)
         }
-
-        {questiondata.results.map((obj, key)=><Results title={obj.title} moreinfo={obj.moreinfo} key={key}></Results>)}
       </section>
       <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'} style={{display: this.state.quizComplete === false ? 'none' : 'flex'}}>
         <div className="results--text">
-        <h3>You answered Yes to {this.getTotal()} of {this.state.maxQuestions}</h3>
-        {this.getTotal() < 4 &&
-          <p>Yikes! Unless you’re actively trying to drive away staff, you might want to put some effort into your firm. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Fill out the registration form and download these practical resources to get you on the road to success:
-          </p>
-          
-        }
-         {this.getTotal() < 7 && this.getTotal() > 3 &&
-          <p>You're not actively trying to drive staff away, but there's definitely room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p> 
-        }
-        {this.getTotal() < 10 && this.getTotal() > 6 &&
-          <p>You're on the edge of greatness! Something to think about as you strive for perfection. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p>
-        }
-        {this.getTotal() === 10 &&
+        <Results Total={this.state.total} maxQuestions={this.state.maxQuestions} firmSize={this.state.firmSize} />
+
+        
+        {/* {this.getTotal() === 10 &&
           <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p>
-        }
-        <ul>
-            <li>Becoming an Employer of Choice (guide)</li>
-            <li>Fixing the Talent Management Disconnect (white paper)</li>  
-            <li>And More!</li>
-          </ul>
+        } */}
+        
             {/* <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p> */}
           
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2017 All rights reserved.</p>
@@ -293,7 +279,6 @@ class App extends Component {
       <div className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'controllers--hidden' : 'controllers--displayed'}>
         {this.state.currentquestion>1 && <a className="previous" onClick={this.prevClick.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>} <a className="next" onClick={this.nextClick.bind(this)}>Next</a>
       </div>
-      <p>Debug stuff: {this.state.currentquestion} firmsize: {this.state.firmSize}</p>
       </div>
     );
   }
