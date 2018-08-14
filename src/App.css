@@ -121,8 +121,8 @@ header span{
 h2{
     /* Does your firm allow: */
   font-family: 'Rokkitt', serif;
-  font-size: 52px;
-  line-height: 52px; 
+  font-size: 48px;
+  line-height: 50px; 
   color: #333333;
   margin:0;
 }
@@ -307,7 +307,7 @@ input[type="radio"]:checked:after{
     padding:10px 0 0;
 }
 .takeaway{
-  width:455px;
+  /* width:455px; */
   display:inline-block;
   /* float:left; */
   /* display: none; */
@@ -325,7 +325,7 @@ input[type="radio"]:checked:after{
 
 .takeaway p{
   font-family: ArialMT;
-  font-size: 24px;
+  font-size: 22px;
   color: #333333;
   line-height: 30px;
 }
@@ -464,7 +464,7 @@ p.copyright{
 }
  button{
       /* Rectangle 77: */
-    background: #68B545!important;
+    background: #68B545;
     /* Submit: */
     font-family: Arial-BoldMT;
     font-size: 16px;
@@ -481,7 +481,9 @@ p.copyright{
     cursor: pointer;
     display:block;
 }
-
+button:hover{
+  opacity:70%;
+}
 .mktoform{
   width:100%!important;
 }

@@ -91,9 +91,8 @@ class App extends Component {
             && this.state.questions[0][this.state.currentquestion-1][0]===1){
       this.reactClickEvent('Complete');
       this.setState((prevState)=>{
-        return {quizComplete: true},
-        }
-      });
+        return {quizComplete: true}
+        });
       if(this.getTotal()<4){
         this.reactClickEvent('End Page Result 1');
         if( typeof MktoForms2 !== "undefined" ) {
@@ -186,7 +185,6 @@ class App extends Component {
     return (
       <div className="wrapper">
       <header>
-        <p>{this.state.total}</p>
         <a href="/">
           <img 
           src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
