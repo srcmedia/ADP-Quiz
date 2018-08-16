@@ -29,7 +29,7 @@ class Prelim extends Component{
         const answers = this.props.answers;
 
         return(
-                <div className={"card cf" + (this.props.prelimdisplay === true ? ' current' : '')}>
+                <div className={"card cf" + (this.props.prelimdisplay === true ? ' current' : '')} key={this.props.key}>
                     <h2>{this.props.text}</h2>
                     <div className="inputselect">
                     {answers !== undefined && 
@@ -37,9 +37,9 @@ class Prelim extends Component{
                             <ul>
                                 {answers.map((obj, key)=>
                                                                 <li>
-                                        <input type="radio" name={this.props.index} className="" 
+                                        <input type="radio" name={this.props.index} className=""
                                          onClick={this.radioClick.bind(this, key)}
-                                            value={key}></input> 
+                                            value={key} name="prelim"></input> 
                                             <label>{obj.option}</label> 
                                     </li>
                                 )} 
@@ -50,7 +50,6 @@ class Prelim extends Component{
                 </div>
         );
     }
-
 }
 
 export default Prelim;

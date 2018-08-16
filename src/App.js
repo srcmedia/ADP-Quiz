@@ -49,7 +49,13 @@ class App extends Component {
       }
     });
   }
-
+  prelimBack(){
+    this.setState((prevState)=>{
+      return {
+        prelimDisplay:true
+      }
+    })
+  }
   prevClick(){
     if(this.state.currentquestion >= 1){
       let newArray = this.state.questions;
@@ -68,11 +74,10 @@ class App extends Component {
     if(this.state.prelimDisplay===true){
       this.setState((prevState)=>{
         return {
-            prelimDisplay: false,
+            prelimDisplay: false
+          }
         }
-      }
-    )
-    console.log(this.state.total);
+      )
     }
     if(this.state.currentquestion < this.state.maxQuestions 
         && this.state.questions[0][this.state.currentquestion-1][0]===1 
@@ -159,7 +164,11 @@ class App extends Component {
         });
     }
   }
-
+  goToEnd(){
+    this.setState({
+      quizComplete: true
+    })
+  }
 
   buildQuestions(questionsObject){
     //FORMAT!!  Answered Yes No 
@@ -203,32 +212,29 @@ class App extends Component {
        
       </header>
       <section className="bluebar">
+      <a onClick={this.goToEnd.bind(this)}>Jump to the results</a>
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion == '0' || this.state.prelimDisplay === true) ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
+        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion === '0' || this.state.prelimDisplay === true) ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
       </section>
       <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
       <p>Each year, Accounting Today conducts its “Best Accounting Firms to Work For” survey and recognition program to find and recognize the best employers within the accounting industry. Based on the factors that differentiate the top 100 winners of the Best Firms to Work For award from other firms, we developed, in partnership with ADP, this fun and easy quiz to help you see how your firm stacks up. Take a few moments to answer 10 quick questions to see if your firm is one of the best places to work in accounting and how it compares with similar-sized firms in the industry. Then download resources and information that can help you on your way to being the&nbsp;best.</p>
         <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
         <SocialShare reactClickEvent={this.reactClickEvent}/>
-        <img src={bestof} className="bestfirms cf" alt="ACT Best Firms 2018"/>
+        <img src="//assets.sourcemedia.com/83/2f/943e74834c288227fd21f35adf8c/actbestfirms.fd7029d4.png" className="bestfirms cf" alt="ACT Best Firms 2018"/>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
       style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
       >
         {prelimdata.questions.map((obj,key)=>
           <Prelim 
-          text={obj.question} 
-          key={key} 
-          index={key} 
+          text={obj.question}
           takeaway={obj.takeaway}
           marketoTrack={obj.marketoTrack}
           answers={obj.answers}
           prelimdisplay={this.state.prelimDisplay}
           currentSlide={this.state.currentquestion}
-          answered={this.state.questions[0][key][0]}
-          response={this.state.questions[0][key][1]}
           updateFirmSize={this.updateFirmSize.bind(this)}
           gaTrack={this.reactClickEvent}
           >
@@ -255,26 +261,19 @@ class App extends Component {
       <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'} style={{display: this.state.quizComplete === false ? 'none' : 'flex'}}>
         <div className="results--text">
         <Results Total={this.state.total} maxQuestions={this.state.maxQuestions} firmSize={this.state.firmSize} />
-
-        
-        {/* {this.getTotal() === 10 &&
-          <p>Congratulations &mdash; you're right up there with the best! Of course, even the best firm has room for improvement. ADP&reg; has tons of awesome resources to help make you an Employer of Choice! Here is a good place to start! Fill out the registration form and download practical resources to get you on the road to success:</p>
-        } */}
-        
-            {/* <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p> */}
           
+          <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2017 All rights reserved.</p>
           <SocialShare reactClickEvent={this.reactClickEvent}/>
           </div>
-
         <div className="resultsform">
            <h5>Fill out the form below and get tips to help you become a top firm.</h5>
-        <form id="mktoForm_20631"></form>
-        <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
+        <form id="mktoForm_25360"></form>
         </div>
       </section>
 
       <div className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'controllers--hidden' : 'controllers--displayed'}>
+        {this.state.prelimDisplay === false && this.state.currentquestion === 1 && <a className="previous" onClick={this.prelimBack.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>}
         {this.state.currentquestion>1 && <a className="previous" onClick={this.prevClick.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>} <a className="next" onClick={this.nextClick.bind(this)}>Next</a>
       </div>
       </div>
