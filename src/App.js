@@ -71,6 +71,10 @@ class App extends Component {
   }
 
   nextClick(){
+    //Mobile check if we should scroll to the top.
+    if(window.innerWidth < 768){
+      window.scroll({top: 0, left: 0, behavior: 'smooth' });
+    }
     if(this.state.prelimDisplay===true){
       this.setState((prevState)=>{
         return {

@@ -334,7 +334,7 @@ input[type="radio"]:checked:after{
   line-height: 24px;
 }
 .card.answered  h2{
-  color:#777;
+  color:##000;
 }
 .card.answered .takeaway{
   top:0px;
@@ -521,6 +521,9 @@ form[id^="mktoForm_"]{width:100%!important;}
   .sponsor-logo{
     height: 35px;
   }
+  .quiztitle{
+    font-size: 24px;
+  }
   .card,.results{
     flex-direction: column;
   }
@@ -576,7 +579,7 @@ form[id^="mktoForm_"]{width:100%!important;}
   }
   h3.quiztitle{
     font-size: 14px;
-    color: #777777;
+    color: #000 ;
     letter-spacing: 0;
     line-height: 18px;
     font-family: ArialMT;
@@ -604,8 +607,8 @@ form[id^="mktoForm_"]{width:100%!important;}
   }
   .card h2,
   h2{
-    font-size: 26px;
-    line-height: 28px;
+    font-size: 23px;
+    line-height: 26px;
     margin:20px auto;
     width:280px;
     display:block;
@@ -631,7 +634,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     height:350px;
   }
   .takeaway h4{
-    font-size: 26px;
+    font-size: 23px;
     text-align: center;
   }
   .takeaway p{
