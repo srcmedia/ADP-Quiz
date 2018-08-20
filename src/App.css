@@ -326,7 +326,6 @@ input[type="radio"]:checked:after{
   color: #68B545;
   margin: 0 0 10px;
 }
-
 .takeaway p{
   font-family: ArialMT;
   font-size: 18px;
@@ -428,7 +427,7 @@ input[type="radio"]:checked:after{
   margin-top:20px;
 }
 p.copyright{
-  position: absolute;
+  position: relative;
   bottom:0px;
   left:0px;
   color:#888;
@@ -503,7 +502,9 @@ form[id^="mktoForm_"]{width:100%!important;}
 
 /* Small Desktop */
 @media only screen and (min-width:970px){
-
+  .quiztitle{
+    font-size: 28px;
+  }
 }
 
 /* Tablet */
@@ -533,6 +534,7 @@ form[id^="mktoForm_"]{width:100%!important;}
   }
   .inputselect{
     width:100%;
+    height: 300px;
   }
   .results--text{
     flex-basis:1;
@@ -584,6 +586,9 @@ form[id^="mktoForm_"]{width:100%!important;}
     line-height: 18px;
     font-family: ArialMT;
     margin-bottom: 0px;    
+  }
+  .intro{
+    background-color: #fff;
   }
   .intro p{
     font-family: Rokkitt;

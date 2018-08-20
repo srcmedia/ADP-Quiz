@@ -5,9 +5,6 @@ import Linkedin from './linkedin.svg';
 import Facebook from './facebook.svg';
 
 class socialShare extends Component{
-
-
-
 render(){
     return(
         <span className="sharetext">Share this Quiz: 
