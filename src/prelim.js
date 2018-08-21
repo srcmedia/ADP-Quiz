@@ -23,7 +23,21 @@ class Prelim extends Component{
     }
     radioClick(value){
         this.props.updateFirmSize(this.props.index, value);
-        // this.props.gaTrack(answers.option[value]);
+        let firmChoice = null;
+        switch(value){
+            case 0:
+                firmChoice="Small";
+                break;
+            case 1:
+                firmChoice="Mid";
+                break;
+            case 2:
+                firmChoice="Large";
+                break;
+            default:
+                break;
+        }
+        this.props.gaTrack(firmChoice);
     }
     render(){
         const answers = this.props.answers;

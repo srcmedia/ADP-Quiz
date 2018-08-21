@@ -102,8 +102,19 @@ class App extends Component {
       this.setState((prevState)=>{
         return {quizComplete: true}
         });
+        let totalTrack=this.state.total;
+        let groupName = null;
+        if(this.state.firmSize==0){
+          groupName = "Small";
+        }
+        else if(this.state.firmSize==1){
+          groupName = "Mid";
+        }
+        else if{
+          groupName = "Large";
+        }
       if(this.getTotal()<4){
-        this.reactClickEvent('End Page Result 1');
+        this.reactClickEvent(groupName + ' 0-3');
         if( typeof MktoForms2 !== "undefined" ) {
           window.MktoForms2.whenReady( function (form) { 
               form.vals({"actadpquizgroup":"1"});
@@ -111,7 +122,7 @@ class App extends Component {
         }
       }
       if(this.getTotal()>3 && this.getTotal()<7){
-          this.reactClickEvent('End Page Result 2');
+          this.reactClickEvent(groupName + ' 4-6');
           if( typeof MktoForms2 !== "undefined" ) {
             window.MktoForms2.whenReady( function (form) { 
                 form.vals({"actadpquizgroup":"2"});
@@ -119,20 +130,11 @@ class App extends Component {
           }
         }
       
-      if(this.getTotal()>6 && this.getTotal() < 10){
-        this.reactClickEvent('End Page Result 3');
+      if(this.getTotal()>6 && this.getTotal() <= 10){
+        this.reactClickEvent(groupName + ' 7-10');
         if( typeof MktoForms2 !== "undefined" ) {
           window.MktoForms2.whenReady( function (form) { 
               form.vals({"actadpquizgroup":"3"});
-          });
-        }
-      }
-    
-      if(this.getTotal()===10){
-        this.reactClickEvent('End Page Result 4');
-        if( typeof MktoForms2 !== "undefined" ) {
-          window.MktoForms2.whenReady( function (form) { 
-              form.vals({"actadpquizgroup":"4"});
           });
         }
       }
@@ -142,7 +144,6 @@ class App extends Component {
     this.setState((orevstate)=>{
       return{firmSize: choice}
     });
-    console.log("pew pew");
   }
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
@@ -159,7 +160,7 @@ class App extends Component {
       questions: newArray,
       total: newTotal
     });
-    this.reactClickEvent('question: ' + trackedKey + ' choice: ' +choice);
+    // this.reactClickEvent('question: ' + trackedKey + ' choice: ' +choice);
     if( typeof MktoForms2 !== "undefined" ) {
       window.MktoForms2.whenReady( function (form) { 
           // form.vals({currentMarketoTrack:"snoop doggy dog"});
@@ -229,20 +230,20 @@ class App extends Component {
         <img src="//assets.sourcemedia.com/83/2f/943e74834c288227fd21f35adf8c/actbestfirms.fd7029d4.png" className="bestfirms cf" alt="ACT Best Firms 2018"/>
       </section>
       <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
-      style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
-      >
+        style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
+        >
         {prelimdata.questions.map((obj,key)=>
-          <Prelim 
-          text={obj.question}
-          takeaway={obj.takeaway}
-          marketoTrack={obj.marketoTrack}
-          answers={obj.answers}
-          prelimdisplay={this.state.prelimDisplay}
-          currentSlide={this.state.currentquestion}
-          updateFirmSize={this.updateFirmSize.bind(this)}
-          gaTrack={this.reactClickEvent}
-          >
-        </Prelim>)
+            <Prelim 
+            text={obj.question}
+            takeaway={obj.takeaway}
+            marketoTrack={obj.marketoTrack}
+            answers={obj.answers}
+            prelimdisplay={this.state.prelimDisplay}
+            currentSlide={this.state.currentquestion}
+            updateFirmSize={this.updateFirmSize.bind(this)}
+            gaTrack={this.reactClickEvent}
+            >
+          </Prelim>)
         }
         {questiondata.questions.map((obj, key)=>
           <Question 
