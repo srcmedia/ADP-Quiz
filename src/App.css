@@ -265,7 +265,7 @@ input[type="radio"]:checked:after{
   transition: color .3s linear;
   display:inline-block;
   position:relative;
-  margin-top:20px;
+  margin-top:26px;
 }
 .card h2::before, .results--text h3::before{
   display:block;
@@ -273,7 +273,7 @@ input[type="radio"]:checked:after{
   width: 120px;
   background-color: #68B545;
   content: "";
-  top:-20px;
+  top:-26px;
   position: absolute;
 }
 .card ul{
@@ -565,6 +565,9 @@ form[id^="mktoForm_"]{width:100%!important;}
   .sharetext{
     margin-top:0;
   }
+  .intro .sharetext{
+    margin:50px 0;
+  }
   .mktoForm{
     flex-basis:1;
   }
@@ -759,5 +762,9 @@ form[id^="mktoForm_"]{width:100%!important;}
   .sharetext{
     margin:10px 0;
     text-align: center;
+  }
+  .intro .sharetext{
+    margin:20px 0;
+    width:100%;
   }
 }

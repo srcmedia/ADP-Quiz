@@ -29,7 +29,7 @@ class Question extends Component{
     }
     radioClick(value){
         this.props.updateStatus(this.props.index, value);
-        this.props.gaTrack(value === 0 ? "Yes":"No");
+        // this.props.gaTrack(value === 0 ? "Yes":"No");
     }
     render(){ 
         const answers = this.props.answers;

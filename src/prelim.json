@@ -5,7 +5,7 @@
                 "question": "What's your firm size?",
                 "weight": 1,
                 "takeaway": "",
-                "marketoTrack":"aCTADPQuizQ0FirmSize",
+                "marketoTrack":"aCTADPQuiz2018Q1FirmSize",
                 "answers":[
                     {"option":"A small firm (up to 49 employees)"},
                     {"option":"A mid-sized firm (between 50 and 249 associates)"}, 

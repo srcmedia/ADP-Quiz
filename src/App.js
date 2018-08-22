@@ -151,7 +151,7 @@ class App extends Component {
     let currentMarketoTrack = questiondata.questions[key].marketoTrack;
     let injectedObj = {};
     let newTotal = this.getTotal();
-    console.log(newTotal);
+    let trackedKey = key + 1;
     if(key!==0){injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";}
     else{injectedObj[currentMarketoTrack] = choice;}
     newArray[0][key][0]=1;  //Answered
@@ -160,7 +160,7 @@ class App extends Component {
       questions: newArray,
       total: newTotal
     });
-    // this.reactClickEvent('question: ' + trackedKey + ' choice: ' +choice);
+    this.reactClickEvent('Question: ' + trackedKey + ' Choice: ' +choice);
     if( typeof MktoForms2 !== "undefined" ) {
       window.MktoForms2.whenReady( function (form) { 
           // form.vals({currentMarketoTrack:"snoop doggy dog"});
