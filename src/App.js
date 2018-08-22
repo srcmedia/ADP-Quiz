@@ -145,6 +145,26 @@ class App extends Component {
     this.setState((orevstate)=>{
       return{firmSize: choice}
     });
+    let marketoTrack = prelimdata.questions[0].marketoTrack;    
+    let injectedObj = {};
+    switch(choice){
+      case '0':
+        injectedObj[marketoTrack] = "Small";
+        break;
+      case '1':
+        injectedObj[marketoTrack]= "Med";
+        break;
+      case '2':
+        injectedObj[marketoTrack]= "Large";
+        break;
+      default:
+        break;
+    }
+    if( typeof MktoForms2 !== "undefined" ) {
+      window.MktoForms2.whenReady( function (form) { 
+          form.vals(injectedObj);
+        });
+    }
   }
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
@@ -152,7 +172,7 @@ class App extends Component {
     let injectedObj = {};
     let newTotal = this.getTotal();
     let trackedKey = key + 1;
-    if(key!==0){injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";}
+    if(key!==-1){injectedObj[currentMarketoTrack] = choice === 1 ? "no" : "yes";}
     else{injectedObj[currentMarketoTrack] = choice;}
     newArray[0][key][0]=1;  //Answered
     newArray[0][key][choice] = 1;
@@ -160,6 +180,7 @@ class App extends Component {
       questions: newArray,
       total: newTotal
     });
+    console.log(injectedObj);
     this.reactClickEvent('Question: ' + trackedKey + ' Choice: ' +choice);
     if( typeof MktoForms2 !== "undefined" ) {
       window.MktoForms2.whenReady( function (form) { 
