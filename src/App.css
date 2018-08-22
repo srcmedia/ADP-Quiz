@@ -196,7 +196,7 @@ h3 span{
   position: relative;
   display:block;
   width:100%;
-  opacity: 0;
+  opacity: 1;
   transition: opacity .5s;
   transition-delay: .5s;
 }
@@ -387,11 +387,12 @@ input[type="radio"]:checked:after{
 .results{
   transition: .5s opacity linear;
   transition-delay: .5s;
-  opacity:0;
+  position:absolute;
 }
 .results.shown{
   display: flex;
   opacity:1;
+  position:relative;
 }
 .results.shown h4{
   font-family: Rokkitt-Regular;
@@ -415,6 +416,9 @@ input[type="radio"]:checked:after{
 }
 .results--text p{
   margin-bottom:10px;
+}
+.results--cta{
+  margin-top:20px;
 }
 .resultsform{
   background-color:#fff;
@@ -557,6 +561,9 @@ form[id^="mktoForm_"]{width:100%!important;}
     padding-bottom: 50px;
     /* margin-bottom: 40px; */
     margin-right:0;
+  }
+  .sharetext{
+    margin-top:0;
   }
   .mktoForm{
     flex-basis:1;
@@ -750,7 +757,7 @@ form[id^="mktoForm_"]{width:100%!important;}
     margin-top: 20px;
   }
   .sharetext{
-    margin:20px 0;
+    margin:10px 0;
     text-align: center;
   }
 }

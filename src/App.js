@@ -263,11 +263,11 @@ class App extends Component {
             </Question>)
         }
       </section>
-      <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'} style={{display: this.state.quizComplete === false ? 'none' : 'flex'}}>
+      <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'} >
         <div className="results--text">
         <Results Total={this.state.total} maxQuestions={this.state.maxQuestions} firmSize={this.state.firmSize} />
           
-          <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
+          <p className="results--cta">For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
           
           <SocialShare reactClickEvent={this.reactClickEvent}/>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2018 All rights reserved.</p>
