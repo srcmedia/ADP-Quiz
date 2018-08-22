@@ -50,7 +50,7 @@ class Prelim extends Component{
                         (
                             <ul>
                                 {answers.map((obj, key)=>
-                                                                <li>
+                                    <li>
                                         <input type="radio" name={this.props.index} className=""
                                          onClick={this.radioClick.bind(this, key)}
                                             value={key} name="prelim"></input> 

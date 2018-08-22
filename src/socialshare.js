@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import Twitter from './twitter.svg';
-import Email from './email.svg';
-import Linkedin from './linkedin.svg';
-import Facebook from './facebook.svg';
 
 class socialShare extends Component{
 render(){

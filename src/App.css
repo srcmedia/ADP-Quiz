@@ -196,12 +196,12 @@ h3 span{
   position: relative;
   display:block;
   width:100%;
-  opacity: 1;
+  opacity: 0;
   transition: opacity .5s;
+  transition-delay: .5s;
 }
 .questions.hidden,
 .results.hidden{
-  display: none;
   opacity:0;
   z-index:-1;
 }
@@ -260,9 +260,9 @@ input[type="radio"]:checked:after{
   /* max-width:550px; */
   /* width:100%; */
   width:615px;
-  margin:0 60px 60px 0;
+  margin:6px 60px 60px 0;
   /* float: left; */
-  transition: color .2s;
+  transition: color .3s linear;
   display:inline-block;
   position:relative;
   margin-top:20px;
@@ -333,7 +333,7 @@ input[type="radio"]:checked:after{
   line-height: 24px;
 }
 .card.answered  h2{
-  color:##000;
+  color:#9B9B9B;
 }
 .card.answered .takeaway{
   top:0px;
@@ -384,8 +384,14 @@ input[type="radio"]:checked:after{
   letter-spacing: 0;
   padding-left:10px;
 }
+.results{
+  transition: .5s opacity linear;
+  transition-delay: .5s;
+  opacity:0;
+}
 .results.shown{
   display: flex;
+  opacity:1;
 }
 .results.shown h4{
   font-family: Rokkitt-Regular;
@@ -405,6 +411,7 @@ input[type="radio"]:checked:after{
 
 .results--text h3{
   margin-bottom:20px;
+  margin-top: 6px;
 }
 .results--text p{
   margin-bottom:10px;
@@ -432,6 +439,7 @@ p.copyright{
   left:0px;
   color:#888;
   font-size:12px;
+  margin-top:30px;
 }
 .mktoForm input[type="text"],
 .mktoEmailField,
@@ -500,8 +508,15 @@ button:hover{
 
 form[id^="mktoForm_"]{width:100%!important;}
 
+/* Big Boy Desktop */
+@media only screen and (min-width:1400px){
+  .quiztitle{
+    font-size: 32px;
+  }
+}
+
 /* Small Desktop */
-@media only screen and (min-width:970px){
+@media only screen and (min-width:970px) and (max-width:1399px){
   .quiztitle{
     font-size: 28px;
   }
@@ -531,6 +546,7 @@ form[id^="mktoForm_"]{width:100%!important;}
   .card h2{
     float:left;
     margin-bottom:0;
+    padding-top:6px;
   }
   .inputselect{
     width:100%;
@@ -539,7 +555,8 @@ form[id^="mktoForm_"]{width:100%!important;}
   .results--text{
     flex-basis:1;
     padding-bottom: 50px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+    margin-right:0;
   }
   .mktoForm{
     flex-basis:1;
@@ -618,6 +635,9 @@ form[id^="mktoForm_"]{width:100%!important;}
     width:280px;
     display:block;
     text-align: center;
+  }
+  .card h2{
+    margin-top:26px;
   }
   .card ul li{
     margin-bottom: 30px;

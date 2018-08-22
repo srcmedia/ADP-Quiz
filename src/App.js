@@ -5,7 +5,6 @@ import Results from './results.js';
 import SocialShare from './socialshare.js';
 import questiondata from './questions.json';
 import prelimdata from './prelim.json';
-import bestof from './ACTBestFirms.png';
 
 
 // import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
@@ -41,6 +40,9 @@ class App extends Component {
   }
 
   StartQuiz(){
+    if(window.innerWidth < 768){
+      window.scroll({top: 0, left: 0, behavior: 'smooth' });
+    }
     this.reactClickEvent('Start');
     this.setState((prevState)=>{
       return { 
@@ -102,15 +104,14 @@ class App extends Component {
       this.setState((prevState)=>{
         return {quizComplete: true}
         });
-        let totalTrack=this.state.total;
         let groupName = null;
-        if(this.state.firmSize==0){
+        if(this.state.firmSize===0){
           groupName = "Small";
         }
-        else if(this.state.firmSize==1){
+        else if(this.state.firmSize===1){
           groupName = "Mid";
         }
-        else if{
+        else if(this.state.firmsize===2){
           groupName = "Large";
         }
       if(this.getTotal()<4){
@@ -147,9 +148,8 @@ class App extends Component {
   }
   updateStatus(key, choice){ 
     let newArray = this.state.questions;
-    let trackedKey = key + 1;
     let currentMarketoTrack = questiondata.questions[key].marketoTrack;
-    let injectedObj = new Object();
+    let injectedObj = {};
     let newTotal = this.getTotal();
     console.log(newTotal);
     if(key!==0){injectedObj[currentMarketoTrack] = choice === 1 ? "yes" : "no";}
@@ -268,8 +268,9 @@ class App extends Component {
         <Results Total={this.state.total} maxQuestions={this.state.maxQuestions} firmSize={this.state.firmSize} />
           
           <p>For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
-          <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2017 All rights reserved.</p>
+          
           <SocialShare reactClickEvent={this.reactClickEvent}/>
+          <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2018 All rights reserved.</p>
           </div>
         <div className="resultsform">
            <h5>Fill out the form below and get tips to help you become a top firm.</h5>
