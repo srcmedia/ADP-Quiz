@@ -31,6 +31,7 @@ p,li{
   min-height:830px;
   position: relative;
   display:block;
+  overflow: hidden;
 }
 
 .wrapper:after {
@@ -164,15 +165,14 @@ h3 span{
   overflow:hidden;
   min-height: 450px;
   opacity: 1;
-  transition: opacity .5s, visibility .5s;
-  transition-delay: .5s;
+  transition: opacity .5s;
   padding-top:0px;
 }
 .intro{
   position:absolute;
   width:100%;
   z-index:99;
-  transition: opacity .5s, visibility .5s;
+  transition: opacity .5s;
 }
 .intro.hidden{
   opacity: 0;
@@ -198,7 +198,6 @@ h3 span{
   width:100%;
   opacity: 1;
   transition: opacity .5s;
-  transition-delay: .5s;
 }
 .questions.hidden,
 .results.hidden{
@@ -386,7 +385,7 @@ input[type="radio"]:checked:after{
 }
 .results{
   transition: .5s opacity linear;
-  transition-delay: .5s;
+  transition-delay: .1s;
   position:absolute;
 }
 .results.shown{
@@ -447,11 +446,11 @@ p.copyright{
 }
 .mktoForm input[type="text"],
 .mktoEmailField,
-.mktoForm input[type=tel],
+.mktoForm input[type= tel],
 .mktoForm select
 {
   width:100%!important;
-  /* border:1px solid #ccc; */
+  border:1px solid #ccc;
   /* border: 1px dotted red; */
   padding: 17px 15px;
   margin: 5px auto 20px!important;
@@ -551,6 +550,8 @@ form[id^="mktoForm_"]{width:100%!important;}
     float:left;
     margin-bottom:0;
     padding-top:6px;
+    font-size: 34px;
+    line-height: 38px;
   }
   .inputselect{
     width:100%;
@@ -666,7 +667,7 @@ form[id^="mktoForm_"]{width:100%!important;}
   }
   .takeaway{
     width:inherit;
-    height:350px;
+    height:300px;
   }
   .takeaway h4{
     font-size: 23px;
@@ -676,9 +677,9 @@ form[id^="mktoForm_"]{width:100%!important;}
     font-size: 16px;
     line-height: 20px;
   }
-  .questions--displayed, 
-  .results--displayed{
-    min-height:300px;
+  .questions.displayed, 
+  .results.displayed{
+    min-height:500px;
     
   }
   .controllers--displayed{

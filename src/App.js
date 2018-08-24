@@ -22,6 +22,7 @@ class App extends Component {
     this.state = {
       splashDisplay: true,
       prelimDisplay: false,
+      prelimSelect: false,
       title: null,
       currentquestion: 1,
       maxQuestions: 0,
@@ -77,11 +78,9 @@ class App extends Component {
     if(window.innerWidth < 768){
       window.scroll({top: 0, left: 0, behavior: 'smooth' });
     }
-    if(this.state.prelimDisplay===true){
+    if(this.state.prelimDisplay === true && this.state.prelimSelect){
       this.setState((prevState)=>{
-        return {
-            prelimDisplay: false
-          }
+        return {prelimDisplay: false}
         }
       )
     }
@@ -143,18 +142,20 @@ class App extends Component {
   }
   updateFirmSize(key, choice){
     this.setState((orevstate)=>{
-      return{firmSize: choice}
+      return{
+        prelimSelect: true,
+        firmSize: choice}
     });
     let marketoTrack = prelimdata.questions[0].marketoTrack;    
     let injectedObj = {};
     switch(choice){
-      case '0':
+      case 0:
         injectedObj[marketoTrack] = "Small";
         break;
-      case '1':
+      case 1:
         injectedObj[marketoTrack]= "Med";
         break;
-      case '2':
+      case 2:
         injectedObj[marketoTrack]= "Large";
         break;
       default:
@@ -180,7 +181,6 @@ class App extends Component {
       questions: newArray,
       total: newTotal
     });
-    console.log(injectedObj);
     this.reactClickEvent('Question: ' + trackedKey + ' Choice: ' +choice);
     if( typeof MktoForms2 !== "undefined" ) {
       window.MktoForms2.whenReady( function (form) { 
@@ -238,7 +238,7 @@ class App extends Component {
        
       </header>
       <section className="bluebar">
-      <a onClick={this.goToEnd.bind(this)}>Jump to the results</a>
+      {/* <a onClick={this.goToEnd.bind(this)}>Jump to the results</a> */}
       </section>
       <section>
         <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
