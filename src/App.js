@@ -190,11 +190,11 @@ class App extends Component {
         });
     }
   }
-  goToEnd(){
-    this.setState({
-      quizComplete: true
-    })
-  }
+  // goToEnd(){
+  //   this.setState({
+  //     quizComplete: true
+  //   })
+  // }
 
   buildQuestions(questionsObject){
     //FORMAT!!  Answered Yes No 
@@ -288,7 +288,7 @@ class App extends Component {
         <div className="results--text">
         <Results Total={this.state.total} maxQuestions={this.state.maxQuestions} firmSize={this.state.firmSize} />
           
-          <p className="results--cta">For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p>
+          {/* <p className="results--cta">For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p> */}
           
           <SocialShare reactClickEvent={this.reactClickEvent}/>
           <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2018 All rights reserved.</p>

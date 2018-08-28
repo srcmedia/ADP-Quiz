@@ -9,6 +9,7 @@ body{
   background-image: url(//assets.sourcemedia.com/fa/dc/572f801945689091c384336ab25b/adp-bkg.fc288de6.jpg);
   background-size: cover;
   background-attachment: fixed;
+  background-color:#daefd0;
 }
 p,li{
   margin: 0;
@@ -144,6 +145,9 @@ h2{
   position: relative;
   margin: 0 auto;
 }
+.intro p::before{
+  top:-30px;
+}
 h3{
   font-family: 'Rokkitt', serif;
   font-size: 32px;
@@ -183,7 +187,7 @@ h3 span{
   font-size: 23px;
   line-height: 27px;
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: 20px auto 40px;
 }
 
 .bestfirms{
@@ -259,12 +263,11 @@ input[type="radio"]:checked:after{
   /* max-width:550px; */
   /* width:100%; */
   width:615px;
-  margin:6px 60px 60px 0;
+  margin:30px 60px 60px 0;
   /* float: left; */
   transition: color .3s linear;
   display:inline-block;
   position:relative;
-  margin-top:26px;
 }
 .card h2::before, .results--text h3::before{
   display:block;
@@ -304,7 +307,7 @@ input[type="radio"]:checked:after{
   overflow: hidden;
   position: relative;
   width:calc(50% - 30px);
-  margin-top:20px;
+  margin-top:30px;
 }
 .inputselect ul{
     padding:10px 0 0;
@@ -392,6 +395,7 @@ input[type="radio"]:checked:after{
   display: flex;
   opacity:1;
   position:relative;
+  margin-top: 14px;
 }
 .results.shown h4{
   font-family: Rokkitt-Regular;
