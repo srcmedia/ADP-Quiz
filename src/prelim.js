@@ -14,7 +14,7 @@ class Prelim extends Component{
             response = response+" current";
         }
         if(inClass !==undefined && this.props.currentSlide !==0 ){
-            response = response + " answered meow";
+            response = response + " answered";
         }
         if(this.props.currentSlide-1!==this.props.index){
             response="card";
@@ -37,7 +37,7 @@ class Prelim extends Component{
             default:
                 break;
         }
-        this.props.gaTrack(firmChoice);
+        this.props.gaTrack("Question 0 "+firmChoice);
     }
     render(){
         const answers = this.props.answers;
