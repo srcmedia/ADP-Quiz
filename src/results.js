@@ -16,9 +16,10 @@ class Results extends Component{
                     <li>Tuition reimbursement or assistance for additional degrees or credentials</li>
                     <li>Matches employee contributions to a retirement savings plans account</li>
                 </ul>
-                <p>ADP has a wealth of great solutions to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
                     <ul>
                         <li>HR Myths ebook</li>
+                        <li>Hiring 101: Small Business Guidebook</li>
                         <li>Winning the War on Talent ebook</li>
                         <li>The human touch</li>
                         <li>Finding Happiness and Success at Work</li>
@@ -35,9 +36,10 @@ class Results extends Component{
                     <li>Tuition reimbursement or assistance for additional degrees or credentials</li>
                     <li>Matches employee contributions to a retirement savings plans account</li>
                 </ul>
-                <p>ADP has a wealth of great solutions to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
                     <ul>
                         <li>HR Myths ebook</li>
+                        <li>Hiring 101: Small Business Guidebook</li>
                         <li>Winning the War on Talent ebook</li>
                         <li>The human touch</li>
                         <li>Finding Happiness and Success at Work</li>
@@ -46,7 +48,7 @@ class Results extends Component{
             }
             if(total > 6){
                 Result = <div><p>Congratulations! Your firm may be small but it’s mighty and is among the best of the best among small firms.</p>
-                <p>ADP has a wealth of great solutions to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm continue to be a best firm to work for, including:</b></p>
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm continue to be a best firm to work for, including:</b></p>
                 <ul>
                     <li>Becoming an Employer of Choice</li>
                     <li>Keeping pace</li>
@@ -58,7 +60,8 @@ class Results extends Component{
         }
         else if(firmSize === 1){
             if(total < 4){
-                Result = <div><p>Your firm must make some changes if it is going to successfully compete in today’s business environment. Here are a number of places to start:</p><p>Mid-size firms that make the Top 100 Best Firms to Work For list are offering employees a range of benefits including but not limited to:</p><ul><li>Sharing information about how the firm is doing financially</li><li>Telecommuting options</li><li>Invites employees’ immediate families invited to firm events</li><li>Personal development or stress management workshops or classes</li><li>Matches employee contributions to a retirement savings plans account</li></ul><p>ADP has a wealth of great resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
+                Result = <div><p>Your firm must make some changes if it is going to successfully compete in today’s business environment. Here are a number of places to start:</p><p>Mid-size firms that make the Top 100 Best Firms to Work For list are offering employees a range of benefits including but not limited to:</p><ul><li>Sharing information about how the firm is doing financially</li><li>Telecommuting options</li><li>Invites employees’ immediate families invited to firm events</li><li>Personal development or stress management workshops or classes</li><li>Matches employee contributions to a retirement savings plans account</li></ul>
+                '<p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
                 <ul>
                     <li>HR Myths ebook</li>
                     <li>Winning the War on Talent ebook</li>
@@ -68,7 +71,8 @@ class Results extends Component{
             </div>;
             }
             if(total > 3 && total < 7){
-                Result = <div><p>Don’t let your mid-size firm be mediocre in today’s competitive market. Though you’re already doing some things many of the Top 100 firms are doing, act now and take the necessary steps to become an employer of choice. Here are a number of benefits the Top 100 Large Firms to Work for are offering:</p><ul><li>Sharing information about how the firm is doing financially</li><li>Paid time off for community service activities or volunteer work</li><li>Invites employees’ immediate families invited to firm events</li><li>Tuition reimbursement</li><li>A formalized succession planning program or practice</li></ul><p>ADP has a wealth of great resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
+                Result = <div><p>Don’t let your mid-size firm be mediocre in today’s competitive market. Though you’re already doing some things many of the Top 100 firms are doing, act now and take the necessary steps to become an employer of choice. Here are a number of benefits the Top 100 Large Firms to Work for are offering:</p><ul><li>Sharing information about how the firm is doing financially</li><li>Paid time off for community service activities or volunteer work</li><li>Invites employees’ immediate families invited to firm events</li><li>Tuition reimbursement</li><li>A formalized succession planning program or practice</li></ul>
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
                 <ul>
                     <li>HR Myths ebook</li>
                     <li>Winning the War on Talent ebook</li>
@@ -80,7 +84,7 @@ class Results extends Component{
             if(total > 6){
                 Result = <div>
                     <p>Congratulations! Your firm is the cream of the crop among mid-sized firms.</p>
-                    <p>ADP has a wealth of great solutions to help your firm attract and retain top talent <b>Fill out the form and get resources and tips that will help your firm continue to be a best firm to work for, including:</b></p>
+                    <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm continue to be a best firm to work for, including:</b></p>
                     <ul>
                         <li>Becoming an Employer of Choice</li>
                         <li>Keeping pace</li>
@@ -92,7 +96,18 @@ class Results extends Component{
         }
         else if(firmSize === 2){
             if(total < 4){
-                Result = <div><p>Your firm may be larger in size but that doesn’t necessarily mean it’s mighty. Your firm must make some changes if it’s going to effectively compete in today’s market. Here are a number of places to start.</p><p>Large-size firms that make the Top 100 Best Firms to Work For list are offering employees a range of benefits including:</p><ul><li>Paid time off for community service activities or volunteer work</li><li>Telecommuting options</li><li>Invites employees’ immediate families invited to firm events</li><li>Tuition reimbursement or assistance for additional degrees or credentials</li><li>Matches employee contributions to a retirement savings plans account</li><li>Fitness or wellness programs</li></ul><p>ADP has a wealth of great solutions to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
+                Result = <div><p>Your firm may be larger in size but that doesn’t necessarily mean it’s mighty. Your firm must make some changes if it’s going to effectively compete in today’s market. Here are a number of places to start.</p>
+                <p>Large-size firms that make the Top 100 Best Firms to Work For list are offering employees a range of benefits including:</p>
+                <ul>
+                    <li>Paid time off for community service activities or volunteer work</li>
+                    <li>Telecommuting options</li>
+                    <li>Invites employees’ immediate families invited to firm events</li>
+                    <li>Tuition reimbursement or assistance for additional degrees or credentials</li>
+                    <li>Matches employee contributions to a retirement savings plans account</li>
+                    <li>Fitness or wellness programs</li>
+                </ul>
+                
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
                     <ul>
                         <li>HR Myths ebook</li>
                         <li>Winning the War on Talent ebook</li>
@@ -102,8 +117,15 @@ class Results extends Component{
                 </div>;
             }
             if(total > 3 && total < 7){
-                Result = <div><p>Though you’re already doing some things many of the Top 100 Best Firms to Work For are doing, your firm has room for improvement when it comes to being an employer of choice among large firms.</p><p>Large-size firms that make the Top 100 Best Firms to Work For list are offering employees a range of benefits including but not limited to:</p><p>ADP has a wealth of great solutions to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p><ul><li>Invites employees’ immediate families invited to firm events</li><li>Tuition reimbursement or assistance for additional degrees or credentials</li><li>A formalized succession planning program or practice</li><li>Flexible hours or compressed work weeks</li><li>Personal development or stress management workshops or classes</li><li>Shares information on the firm’s financial health with staff</li></ul>
-                <p>ADP has a wealth of great resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
+                Result = <div><p>Though you’re already doing some things many of the Top 100 Best Firms to Work For are doing, your firm has room for improvement when it comes to being an employer of choice among large firms.</p>
+                <p>Large-size firms that make the Top 100 Best Firms to Work For list are offering employees a range of benefits including but not limited to:</p>
+                    <ul><li>Invites employees’ immediate families invited to firm events</li>
+                    <li>Tuition reimbursement or assistance for additional degrees or credentials</li>
+                    <li>A formalized succession planning program or practice</li><li>Flexible hours or compressed work weeks</li>
+                    <li>Personal development or stress management workshops or classes</li><li>Shares information on the firm’s financial health with staff</li>
+                </ul>
+
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm improve talent acquisition and retention, including:</b></p>
                     <ul>
                         <li>HR Myths ebook</li>
                         <li>Winning the War on Talent ebook</li>
@@ -114,7 +136,7 @@ class Results extends Component{
             }
             if(total > 6){
                 Result = <div><p>Congratulations! Your large firm is not only right on track but it’s among the best of the best.</p>
-                <p>ADP has a wealth of great solutions to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm continue to be a best firm to work for, including:</b></p>
+                <p>ADP has a wealth of great solutions and resources to help your firm attract and retain top talent. <b>Fill out the form and get resources and tips that will help your firm continue to be a best firm to work for, including:</b></p>
                     <ul>
                         <li>Becoming an Employer of Choice</li>
                         <li>Keeping pace</li>
