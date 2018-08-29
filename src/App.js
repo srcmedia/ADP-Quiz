@@ -110,7 +110,7 @@ class App extends Component {
         else if(this.state.firmSize===1){
           groupName = "Mid";
         }
-        else if(this.state.firmsize===2){
+        else if(this.state.firmSize===2){
           groupName = "Large";
         }
       if(this.getTotal()<4){
