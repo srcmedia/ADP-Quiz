@@ -1,311 +1,390 @@
-import React, { Component } from 'react';
-import Prelim from './prelim';
-import Question from './question.js';
-import Results from './results.js';
-import SocialShare from './socialshare.js';
-import questiondata from './questions.json';
-import prelimdata from './prelim.json';
+import React, { Component } from "react";
+import Question from "./question.js";
+import Results from "./results.js";
+import questiondata from "./questions.json";
+import Tracker, { QUIZ_EVENTS } from "./tracking";
+import { shouldHaveOneAnswer, uncheckboxes } from "./utils.js";
+import "./App.css";
+import Confirmation from "./confirmation.jsx";
 
-
-// import MktoForms2 from '//app-sj03.marketo.com/js/forms2/js/forms2.min.js';
-import ReactGA from 'react-ga';
-
-import './App.css';
-
-ReactGA.initialize('UA-219761-62');
-ReactGA.set({page: window.location.pathname, title: document.title, location: window.location})
-ReactGA.pageview('/best-accounting-firms-quiz');
+const quizTracker = new Tracker();
+quizTracker.init();
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      splashDisplay: true,
-      prelimDisplay: false,
-      prelimSelect: false,
-      title: null,
-      currentquestion: 1,
-      maxQuestions: 0,
-      firmSize: 0,
-      total: 0,
-      questions: this.buildQuestions(questiondata.questions),
-      quizComplete: false,
-    };
-  }
-  
-  componentDidMount(){
-    this.setState({
-      title: questiondata.title,
-      maxQuestions: questiondata.questions.length
-    });  
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			splashDisplay: true,
+			title: null,
+			currentquestion: 1,
+			maxQuestions: 0,
+			firmSize: 0,
+			total: 0,
+			questions: this.buildQuestions(questiondata.questions),
+			quizComplete: false,
+			answerSelected: false,
+			takeawayViewed: false,
+			confirmation: false,
+			group: "UNKNOWN",
+			user: "",
+		};
+	}
 
-  StartQuiz(){
-    if(window.innerWidth < 768){
-      window.scroll({top: 0, left: 0, behavior: 'smooth' });
-    }
-    this.reactClickEvent('Start');
-    this.setState((prevState)=>{
-      return { 
-        splashDisplay: false,
-        prelimDisplay: true  
-      }
-    });
-  }
-  prelimBack(){
-    this.setState((prevState)=>{
-      return {
-        prelimDisplay:true
-      }
-    })
-  }
-  prevClick(){
-    if(this.state.currentquestion >= 1){
-      let newArray = this.state.questions;
-      newArray[0][this.state.currentquestion-2][0]=0;
-      newArray[0][this.state.currentquestion-2][1]=0;
-      newArray[0][this.state.currentquestion-2][2]=0;
-      this.setState((prevState)=>{
-        return {currentquestion: prevState.currentquestion-1,
-                questions: newArray
-        };
-      });
-    }
-  }
+	componentDidMount() {
+		this.setState({
+			title: questiondata.title,
+			maxQuestions: questiondata.questions.length,
+		});
 
-  nextClick(){
-    //Mobile check if we should scroll to the top.
-    if(window.innerWidth < 768){
-      window.scroll({top: 0, left: 0, behavior: 'smooth' });
-    }
-    if(this.state.prelimDisplay === true && this.state.prelimSelect){
-      this.setState((prevState)=>{
-        return {prelimDisplay: false}
-        }
-      )
-    }
-    if(this.state.currentquestion < this.state.maxQuestions 
-        && this.state.questions[0][this.state.currentquestion-1][0]===1 
-        && this.state.prelimDisplay===false){
-      let newArray = this.state.questions;
-      newArray[0][this.state.currentquestion][0]=0;
-      newArray[0][this.state.currentquestion][1]=0;
-      newArray[0][this.state.currentquestion][2]=0;
-      this.setState((prevState)=>{
-        return {currentquestion: prevState.currentquestion+1,
-                questions: newArray
-          };
-      });
-    }
-    else if(this.state.currentquestion === this.state.maxQuestions 
-            && this.state.questions[0][this.state.currentquestion-1][0]===1){
-      this.reactClickEvent('Complete');
-      this.setState((prevState)=>{
-        return {quizComplete: true}
-        });
-        let groupName = null;
-        if(this.state.firmSize===0){
-          groupName = "Small";
-        }
-        else if(this.state.firmSize===1){
-          groupName = "Mid";
-        }
-        else if(this.state.firmSize===2){
-          groupName = "Large";
-        }
-      if(this.getTotal()<4){
-        this.reactClickEvent(groupName + ' 0-3');
-        if( typeof MktoForms2 !== "undefined" ) {
-          window.MktoForms2.whenReady( function (form) { 
-              form.vals({"actadpquizgroup":"1"});
-          });
-        }
-      }
-      if(this.getTotal()>3 && this.getTotal()<7){
-          this.reactClickEvent(groupName + ' 4-6');
-          if( typeof MktoForms2 !== "undefined" ) {
-            window.MktoForms2.whenReady( function (form) { 
-                form.vals({"actadpquizgroup":"2"});
-              });
-          }
-        }
-      
-      if(this.getTotal()>6 && this.getTotal() <= 10){
-        this.reactClickEvent(groupName + ' 7-10');
-        if( typeof MktoForms2 !== "undefined" ) {
-          window.MktoForms2.whenReady( function (form) { 
-              form.vals({"actadpquizgroup":"3"});
-          });
-        }
-      }
-    }
-  }
-  updateFirmSize(key, choice){
-    this.setState((orevstate)=>{
-      return{
-        prelimSelect: true,
-        firmSize: choice}
-    });
-    let marketoTrack = prelimdata.questions[0].marketoTrack;    
-    let injectedObj = {};
-    switch(choice){
-      case 0:
-        injectedObj[marketoTrack] = "Small";
-        break;
-      case 1:
-        injectedObj[marketoTrack]= "Med";
-        break;
-      case 2:
-        injectedObj[marketoTrack]= "Large";
-        break;
-      default:
-        break;
-    }
-    if( typeof MktoForms2 !== "undefined" ) {
-      window.MktoForms2.whenReady( function (form) { 
-          form.vals(injectedObj);
-        });
-    }
-  }
-  updateStatus(key, choice){ 
-    let newArray = this.state.questions;
-    let currentMarketoTrack = questiondata.questions[key].marketoTrack;
-    let injectedObj = {};
-    let newTotal = this.getTotal();
-    let trackedKey = key + 1;
-    if(key!==-1){injectedObj[currentMarketoTrack] = choice === 1 ? "no" : "yes";}
-    else{injectedObj[currentMarketoTrack] = choice;}
-    newArray[0][key][0]=1;  //Answered
-    newArray[0][key][choice] = 1;
-    this.setState({
-      questions: newArray,
-      total: newTotal
-    });
-    this.reactClickEvent('Question: ' + trackedKey + ' Choice: ' +choice);
-    if( typeof MktoForms2 !== "undefined" ) {
-      window.MktoForms2.whenReady( function (form) { 
-          // form.vals({currentMarketoTrack:"snoop doggy dog"});
-          // let injectedArray = {currentMarketoTrack : "snoop doggy dog"};
-          form.vals(injectedObj);
-        });
-    }
-  }
-  // goToEnd(){
-  //   this.setState({
-  //     quizComplete: true
-  //   })
-  // }
+		document.addEventListener("piano-form-submit", (e) => {
+			const user = e.detail.email;
+			this.setState({
+				confirmation: true,
+				quizComplete: true,
+				user: user,
+			});
+			//Track quiz_complete_form
+			quizTracker.track(QUIZ_EVENTS.FORM_SUBMIT, e.detail);
+		});
+	}
 
-  buildQuestions(questionsObject){
-    //FORMAT!!  Answered Yes No 
-    let questions = [];
-    questions.push(questionsObject.map((object, key)=>[0, 0, 0]));
-    return questions;
-  }
+	StartQuiz() {
+		if (window.innerWidth < 768) {
+			window.scroll({ top: 0, left: 0, behavior: "smooth" });
+		}
+		quizTracker.track(QUIZ_EVENTS.START);
+		this.setState((prevState) => {
+			return {
+				splashDisplay: false,
+			};
+		});
+	}
 
-  getTotal(){
-    let addedUp=document.querySelectorAll(".true:checked").length;
-    return addedUp;
-  }
-  reactClickEvent(eventLabel){
-    ReactGA.event({
-      category:'Sponsored Quiz',
-      action: 'Best Accounting Firms – ADP',
-      label: eventLabel
-    }); 
-    // console.log(eventLabel);
-  }
-  
-  render(){
-    return (
-      <div className="wrapper">
-      <header>
-        <a href="/">
-          <img 
-          src={"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"}
-          className="site-logo"
-          alt="Accounting Today"
-          />
-        </a>
-        <span className="mobile--only">Sponsored By</span>
+	prevClick() {
+		if (this.state.answerSelected && this.state.takeawayViewed) return;
+		if (this.state.currentquestion >= 1) {
+			let newArray = this.state.questions;
+			newArray[0][this.state.currentquestion - 2][0] = 0;
+			newArray[0][this.state.currentquestion - 2][1] = 0;
+			newArray[0][this.state.currentquestion - 2][2] = 0;
 
-       <img
-        src={"https://source-media-brightspot-lower.s3.amazonaws.com/39/b0/3f81867647589b47ae996bbc88d0/automatic-data-processing.png"}
-        className="sponsor-logo"
-        alt="ADP"
-          />
-        <span className="desktop--only">Sponsored By</span>
-       
-      </header>
-      <section className="bluebar">
-      {/* <a onClick={this.goToEnd.bind(this)}>Jump to the results</a> */}
-      </section>
-      <section>
-        <h3 className="quiztitle"><span>Quiz:</span> {this.state.title}</h3>
-        <p className={(this.state.splashDisplay === true || this.state.quizComplete === true || this.state.currentquestion === '0' || this.state.prelimDisplay === true) ? 'results hidden' : 'counter'}>Question: <strong>{this.state.currentquestion}</strong> of <strong>{this.state.maxQuestions}</strong></p>
-      </section>
-      <section className={this.state.splashDisplay === true ? 'intro displayed' : 'intro hidden'}>
-      <p>Each year, Accounting Today conducts its “Best Accounting Firms to Work For” survey and recognition program to find and recognize the best employers within the accounting industry. Based on the factors that differentiate the top 100 winners of the Best Firms to Work For award from other firms, we developed, in partnership with ADP, this fun and easy quiz to help you see how your firm stacks up. Take a few moments to answer 10 quick questions to see if your firm is one of the best places to work in accounting and how it compares with similar-sized firms in the industry. Then download resources and information that can help you on your way to being the&nbsp;best.</p>
-        <button onClick={this.StartQuiz.bind(this)}>Start the quiz now!</button>
-        <SocialShare reactClickEvent={this.reactClickEvent}/>
-        <img src="//assets.sourcemedia.com/83/2f/943e74834c288227fd21f35adf8c/actbestfirms.fd7029d4.png" className="bestfirms cf" alt="ACT Best Firms 2018"/>
-      </section>
-      <section className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'questions hidden' : 'questions displayed'}
-        style={{display: this.state.quizComplete === false ? 'block' : 'none'}}
-        >
-        {prelimdata.questions.map((obj,key)=>
-            <Prelim 
-            text={obj.question}
-            takeaway={obj.takeaway}
-            marketoTrack={obj.marketoTrack}
-            answers={obj.answers}
-            prelimdisplay={this.state.prelimDisplay}
-            currentSlide={this.state.currentquestion}
-            updateFirmSize={this.updateFirmSize.bind(this)}
-            gaTrack={this.reactClickEvent}
-            >
-          </Prelim>)
-        }
-        {questiondata.questions.map((obj, key)=>
-          <Question 
-              text={obj.question} 
-              key={key} 
-              index={key} 
-              takeaway={obj.takeaway[this.state.firmSize].text}
-              marketoTrack={obj.marketoTrack}
-              answers={obj.answers}
-              prelimdisplay={this.state.prelimDisplay}
-              currentSlide={this.state.currentquestion}
-              answered={this.state.questions[0][key][0]}
-              response={this.state.questions[0][key][1]}
-              updateStatus={this.updateStatus.bind(this)}
-              gaTrack={this.reactClickEvent}
-              >
-            </Question>)
-        }
-      </section>
-      <section className={this.state.quizComplete === false ? 'results hidden' : 'results shown'} >
-        <div className="results--text">
-        <Results Total={this.state.total} maxQuestions={this.state.maxQuestions} firmSize={this.state.firmSize} />
-          
-          {/* <p className="results--cta">For more information on how ADP can help, visit us at <a href="http://adp.com/accountant/" target="_blank" rel="noopener noreferrer">adp.com/accountant</a></p> */}
-          
-          <SocialShare reactClickEvent={this.reactClickEvent}/>
-          <p className="copyright">The ADP logo and ADP are registered trademarks and ADP A more human resource. is a service mark of ADP, LLC. All other marks belong to their owner. Copyright &reg; 2018 All rights reserved.</p>
-          </div>
-        <div className="resultsform">
-           <h5>Fill out the form below and get tips to help you become a top firm.</h5>
-        <form id="mktoForm_25360"></form>
-        </div>
-      </section>
+			const previouslyAnswered = quizTracker.find(
+				quizTracker.progress,
+				"id",
+				this.state.currentquestion - 1
+			);
 
-      <div className={(this.state.splashDisplay === true || this.state.quizComplete === true) ? 'controllers--hidden' : 'controllers--displayed'}>
-        {this.state.prelimDisplay === false && this.state.currentquestion === 1 && <a className="previous" onClick={this.prelimBack.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>}
-        {this.state.currentquestion>1 && <a className="previous" onClick={this.prevClick.bind(this)}>Back&nbsp;to&nbsp;previous&nbsp;question</a>} <a className="next" onClick={this.nextClick.bind(this)}>Next</a>
-      </div>
-      </div>
-    );
-  }
+			let isQuestionAnswered = false;
+
+			if (previouslyAnswered >= 0) {
+				const previouslyAnsweredQuestion =
+					quizTracker.progress[previouslyAnswered];
+				let previousAnswers = previouslyAnsweredQuestion.answer;
+				quizTracker.restorePreviousAnswers(previousAnswers);
+				isQuestionAnswered = Boolean(previouslyAnsweredQuestion.answer.length);
+			}
+
+			this.setState((prevState) => {
+				return {
+					currentquestion: prevState.currentquestion - 1,
+					questions: newArray,
+					answerSelected: isQuestionAnswered,
+					takeawayViewed: false,
+				};
+			});
+		}
+	}
+
+	nextClick() {
+		if (!this.state.answerSelected) return;
+		if (!this.state.takeawayViewed) {
+			const current = document.querySelector(".questions.current");
+			if (current) {
+				current.classList.add("answered");
+			}
+
+			this.setState({ takeawayViewed: true });
+			return;
+		}
+		//Mobile check if we should scroll to the top.
+		if (window.innerWidth < 768) {
+			window.scroll({ top: 0, left: 0, behavior: "smooth" });
+		}
+
+		const nextQuestion = this.state.currentquestion + 1;
+
+		const previouslyAnswered = quizTracker.find(
+			quizTracker.progress,
+			"id",
+			nextQuestion
+		);
+
+		let isQuestionAnswered = false;
+		if (previouslyAnswered >= 0) {
+			const previouslyAnsweredQuestion =
+				quizTracker.progress[previouslyAnswered];
+			isQuestionAnswered = Boolean(previouslyAnsweredQuestion.answer.length);
+		}
+
+		if (
+			this.state.currentquestion < this.state.maxQuestions ||
+			isQuestionAnswered
+		) {
+			let newArray = this.state.questions;
+			newArray[0][this.state.currentquestion][0] = 0;
+			newArray[0][this.state.currentquestion][1] = 0;
+			newArray[0][this.state.currentquestion][2] = 0;
+
+			const currentQuestion =
+				questiondata.questions[this.state.currentquestion - 1];
+			const { number, question } = currentQuestion;
+			const answers = quizTracker.currentAnswers;
+			if (answers.length) {
+				quizTracker.add({ id: number, question, answer: answers });
+			}
+
+			this.setState((prevState) => {
+				return {
+					currentquestion: prevState.currentquestion + 1,
+					questions: newArray,
+					answerSelected: isQuestionAnswered,
+					takeawayViewed: false,
+				};
+			});
+		} else if (
+			this.state.currentquestion === this.state.maxQuestions &&
+			this.state.questions[0][this.state.currentquestion - 1][0] === 1
+		) {
+			const currentQuestion =
+				questiondata.questions[this.state.currentquestion - 1];
+			const { number, question } = currentQuestion;
+			const answers = quizTracker.currentAnswers;
+			quizTracker.add({ id: number, question, answer: answers });
+			//Track quiz completion
+			quizTracker.isComplete = true;
+			const group = quizTracker.getGroup();
+			//Update view
+			this.setState((prevState) => {
+				return { quizComplete: true, group: group };
+			});
+		}
+	}
+
+	checkSelection() {
+		let selection = document.querySelectorAll(".current input:checked");
+		if (!selection.length) {
+			this.setState({
+				answerSelected: false,
+			});
+			return false;
+		}
+		return true;
+	}
+
+	updateStatus(key, choice) {
+		const isCheckOneBox = shouldHaveOneAnswer(choice);
+		let exception = null;
+		if (isCheckOneBox) {
+			exception = choice.option;
+		}
+		uncheckboxes(exception);
+
+		quizTracker.currentAnswers = choice;
+		const isQuestionAnswered = Boolean(quizTracker.currentAnswers.length);
+		let newArray = this.state.questions;
+		let newTotal = this.getTotal();
+
+		let trackedKey = key + 1;
+		newArray[0][key][0] = 1; //Answered
+		newArray[0][key][choice] = 1;
+
+		this.setState({
+			questions: newArray,
+			total: newTotal,
+			answerSelected: isQuestionAnswered,
+		});
+	}
+
+	goToEnd() {
+		this.setState({
+			quizComplete: true,
+		});
+	}
+
+	buildQuestions(questionsObject) {
+		//FORMAT!!  Answered Yes No
+		let questions = [];
+		questions.push(questionsObject.map((object, key) => [0, 0, 0]));
+		return questions;
+	}
+
+	getTotal() {
+		let addedUp = document.querySelectorAll(".true:checked").length;
+		let singleAnswers = document.querySelectorAll(
+			"input[type='radio']:checked"
+		);
+		let multipleAnswers = document.querySelectorAll(
+			"input[type='checkbox']:checked"
+		);
+		return addedUp;
+	}
+
+	render() {
+		return (
+			<div className="wrapper">
+				<header>
+					<a href="/">
+						<img
+							// src={
+							// 	"https://source-media-brightspot-lower.s3.amazonaws.com/06/a7/682048314485a3317b80e1f69b9c/atlogo.png"
+							// }
+							src="https://arizent.brightspotcdn.com/16/d8/797fc38443bb83caf649880b26cd/brand-american-banker-black.svg"
+							width={350}
+							height={40}
+							className="site-logo"
+							alt="American Banker"
+						/>
+					</a>
+					<span className="mobile--only sponsored-by">Sponsored By</span>
+
+					<img
+						src="https://arizent.brightspotcdn.com/82/7d/5a3d43e9439a8c1fb6eaccf3d067/onespan-logo.svg"
+						className="sponsor-logo"
+						alt="One Span"
+					/>
+					<span className="desktop--only sponsored-by">Sponsored By</span>
+				</header>
+				<section className="bluebar">
+					{/* <a onClick={this.goToEnd.bind(this)}>Jump to the results</a> */}
+					<h3 className="quiztitle">
+						<span>Quiz:</span> {this.state.title}
+					</h3>
+				</section>
+				<section>
+					<p
+						className={
+							this.state.splashDisplay === true ||
+							this.state.quizComplete === true ||
+							this.state.currentquestion === "0"
+								? "results hidden"
+								: "counter"
+						}
+					>
+						Question: <strong>{this.state.currentquestion}</strong> of{" "}
+						<strong>{this.state.maxQuestions}</strong>
+					</p>
+				</section>
+				<section
+					className={
+						this.state.splashDisplay === true
+							? "intro displayed"
+							: "intro hidden"
+					}
+				>
+					<p className={"discription"}>
+						Industries across the globe have shifted their technology
+						investments toward cloud offerings and digital experiences. However,
+						selecting the optimal blend of forms and eSignature providers to
+						digitize agreement processes can be challenging. Left unoptimized,
+						siloed systems put businesses at risk, while having the right
+						approach delivers operational efficiencies, lowers costs, and a
+						better customer experience. Take our short quiz to find out how your
+						organization’s progress on its digital agreement readiness journey
+						compares to your peers.
+					</p>
+					<button className={"start"} onClick={this.StartQuiz.bind(this)}>
+						Start the quiz
+					</button>
+					{/* <SocialShare reactClickEvent={this.reactClickEvent} /> */}
+				</section>
+				<section
+					className={
+						this.state.splashDisplay === true ||
+						this.state.quizComplete === true
+							? "questions hidden"
+							: "questions displayed"
+					}
+					style={{
+						display: this.state.quizComplete === false ? "block" : "none",
+					}}
+				>
+					{questiondata.questions.map((question, key) => (
+						<Question
+							text={question.question}
+							type={question.type}
+							key={key}
+							index={key}
+							takeaway={question.takeaway}
+							answers={question.answers}
+							currentSlide={this.state.currentquestion}
+							answered={this.state.questions[0][key][0]}
+							response={this.state.questions[0][key][1]}
+							updateStatus={this.updateStatus.bind(this)}
+						></Question>
+					))}
+				</section>
+				<section
+					className={
+						this.state.quizComplete === false || this.state.confirmation
+							? "results hidden"
+							: "results shown"
+					}
+				>
+					<div className="results--text">
+						<Results />
+					</div>
+					<div className="resultsform">
+						<h5>Register to view results and get the report</h5>
+						<div className="piano-quiz-form"></div>
+					</div>
+				</section>
+				<section
+					className={
+						this.state.confirmation
+							? "confirmation shown"
+							: "confirmation hidden"
+					}
+				>
+					<Confirmation user={this.state.user} score={this.state.group} />
+				</section>
+				<div className="navigation">
+					<div
+						className={
+							this.state.splashDisplay === true ||
+							this.state.quizComplete === true
+								? "controllers--hidden"
+								: "controllers--displayed"
+						}
+					>
+						{this.state.currentquestion > 1 && (
+							<div>
+								<a
+									className={`previous ${
+										this.state.answerSelected && this.state.takeawayViewed
+											? "disabled"
+											: ""
+									}`}
+									onClick={this.prevClick.bind(this)}
+								>
+									&#8592;&nbsp;previous
+								</a>
+							</div>
+						)}{" "}
+						<div>
+							<button
+								className={`next ${
+									this.state.answerSelected ? "" : "disabled"
+								}`}
+								onClick={this.nextClick.bind(this)}
+							>
+								Next&nbsp;&#8594;
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;

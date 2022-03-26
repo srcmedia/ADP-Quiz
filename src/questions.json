@@ -1,146 +1,383 @@
 {
-    "title": "Is your HR and talent strategy among the best of the best?",
-    "questions": [
-            {
-                "question": "Your firm offers paid time off for community service activities or volunteer work to encourage associates to give back to their community.",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"More than half of small firms (57%) offer employees paid time off for community service activities or volunteer work. This is a great benefit as volunteering can make your associates feel like they are making a social impact through their work, and they’ll feel more satisfied and engaged. It also demonstrates your organization’s commitment to your community."},
-                    {"text":"Well over half of mid-size firms (66%) offer employees paid time off for community service activities or volunteer work. This is a great benefit as volunteering can make your associates feel like they are making a social impact through their work, and they’ll feel more satisfied and engaged."},
-                    {"text":"The majority of large firms (94%) offer employees paid time off for community service activities or volunteer work. This is a great benefit as volunteering can make your associates feel like they are making a social impact through their work, and they’ll feel more satisfied and engaged."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q2Community",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "In today’s tech-driven environment, your firm offers associates the ability to telecommute.",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Sixty-two percent of small firms offer telecommuting options to their staff. Providing this flexible work option and technologies that support mobility can help your firm attract and retain top talent as many professionals believe they can be more productive working remotely than in a traditional office. Plus, this enables your firm to hire top talent regardless of their location."},
-                    {"text":"Sixty-six percent of mid-size firms offer telecommuting options to their staff. Providing this flexible work option can help your firm attract and retain top talent as many professionals believe they can be more productive working remotely than in a traditional office. Plus, this enables your firm to hire top talent regardless of their location."},
-                    {"text":" Most large firms (89%) offer telecommuting options to their staff. Providing this flexible work option can help your firm attract and retain top talent as many professionals believe they can be more productive working remotely than in a traditional office. Plus, this enables your firm to hire top talent regardless of their location."}
-                ],
-                "marketoTrack":"aCTADPQuiz2018Q3Telecommute",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Your firm offers fitness or wellness programs to help associates achieve and maintain a healthy lifestyle.",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Thirty-three percent of small firms offer their associates fitness or wellness programs. Offering such benefits can help your employees feel happier and healthier and be more productive. To help drive involvement, consider how you can incentivize participation (competitions, gift cards, etc.), make it more convenient, and leverage technology (apps, fitness trackers, etc.)."},
-                    {"text":"Roughly half of mid-size firms (53%) offer their associates fitness or wellness programs. Offering such benefits can help your employees feel happier and healthier and be more productive. To help drive involvement, consider how you can incentivize participation (competitions, gift cards, etc.), make it more convenient, and leverage technology (apps, fitness trackers, etc.)."},
-                    {"text":"Well over half of large firms (67%) offer their associates fitness or wellness programs. Offering such benefits can help your employees feel happier and healthier and be more productive. To help drive involvement, consider how you can incentivize participation (competitions, gift cards, etc.), make it more convenient, and leverage technology (apps, fitness trackers, etc.)."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q4HealthyLifestyle",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "At your company, firm events are a family affair and immediate family members are welcome to attend.",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Seventy-five percent of small firms invite associates’ immediate family to firm events, which demonstrates to staff that it’s not always just about business. Extending the invite to your employees’ immediate family can help instill a sense of belonging, boost overall employee happiness and show appreciation for their support of the family member’s time and other contributions to your business."},
-                    {"text":"The majority of mid-size firms (88%) show that it’s not always just about business by inviting employees’ immediate family to firm events. Extending the invite to your employees’ immediate family can help instill a sense of belonging and boost overall employee happiness."},
-                    {"text":"Many large firms (78%) invite employees’ immediate family to attend firm events, which demonstrates to staff that it’s not always just about business. This can help instill a sense of belonging among employees and boost overall employee happiness."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q5FamilyAffair",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Your firm emphasizes professional development and offers employees tuition reimbursement or assistance for additional degrees or credentials.",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Many small firms go big when it comes to professional development. Seventy-one percent say they offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession. This can also help small firms attract talent from mid to large firms."},
-                    {"text":"Many mid-size firms (69%) offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession. Given how the industry is changing and adapting, making it easier for employees to add new skills is also critical to the firm’s ongoing success."},
-                    {"text":"Professional development is a significant focus for large firms as 100% offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q6ProfessionalDevelopment",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Has your firm made succession planning a priority with the establishment of a formalized succession planning program or practice?",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Less than half of small firms (40%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
-                    {"text":"More than half of mid-size firms (59%) have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."},
-                    {"text":"Sixty-seven percent of large firms have a formalized succession planning program or practice. Now is a great time for firms to identify leaders and future potential owners as younger, goal-oriented associates are eager for ways to develop professionally and earn promotions."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q7SuccessionPlanning",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Does your firm offer employees flexible hours or compressed work weeks to help gain a greater work/life balance?",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"The majority of small firms (81%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
-                    {"text":"Seventy-five percent of mid-size firms offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."},
-                    {"text":"The majority of large firms (89%) offer employees flexible hours or compressed work weeks. Flexible hours are one of the most important perks that firms can offer employees. It helps associates achieve a better quality of life, and can help firms attract and retain top talent."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q8WorkLifeBalance",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Does your firm help employees better manage stress with personal development classes or workshops? ",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Nearly half of small firms (49%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
-                    {"text":"More than half of mid-size firms (59%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."},
-                    {"text":"Most large firms (89%) offer their employees personal development classes or workshops. Stress can have a significant impact on an employee’s health, sense of well-being, relationships and job productivity. This can be especially true for younger employees facing lower rates of pay and heavy entry-level work."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q9StressManagement",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Your firm helps employees better prepare for their financial future by matching employee contributions to a retirement savings plan account.",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Well over half of small firms (67%) match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions and overall financial wellness. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
-                    {"text":"Seventy-two percent of mid-size firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."},
-                    {"text":"Seventy-eight percent of large firms match employee contributions to a retirement savings plan account. To stay competitive, employers need to go beyond simply offering their staff a retirement savings plan account — they need to help employees with contributions. In light of corporate tax cuts and a tight labor market, a growing number of companies are increasing their 401(k) match."}
-                ],
-                "marketoTrack": "aCTADPQuiz2018Q10RetirementSavings",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            },
-            {
-                "question": "Your firm keeps its employees in the know by sharing information on the company’s financial health. ",
-                "weight": 1,
-                "takeaway": [
-                    {"text":"Less than half of small firms (43%) share information on how they are doing financially with staff. Sharing information on the firm’s financial health can help staff better understand how they can positively impact the financial performance of the firm."},
-                    {"text":"Less than half of mid-size firms (47%) share information on how they are doing financially with staff. Sharing information on the firm’s financial health can help staff better understand how they can positively impact the financial performance of the firm."},
-                    {"text":"Most large firms (89%) share information on how they are doing financially with staff. Sharing information on the firm’s financial health can help staff better understand how they can positively impact the financial performance of the firm."}
-                ],
-                "marketoTrack":"aCTADPQuiz2018Q11CompanyFinancialHealth",
-                "answers":[
-                    {"option":"Yes"},
-                    {"option":"No"}
-                ]
-            }
-        ]
-        
+	"title": "Digital Agreement Readiness: Are you still using carrier pigeons in your agreement processes?",
+	"questions": [
+		{
+			"number": 1,
+			"type": "radio",
+			"question": "Are you currently using a forms automation solution at your organization to digitize internal and/or customer-facing agreements? Please select one response.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "As financial institutions (FIs) seek to further their technology investments by digitizing processes that directly impact the customer experience, the business case for agreement automation software is clear."
+				},
+				{
+					"text": "The first step is to utilize a document generation system that:"
+				},
+				{
+					"numbered": true,
+					"bulletPoints": [
+						"Collects customer information through intelligent, interview-style digital forms;",
+						"Produces easy-to-review documents;",
+						"Facilitates real-time signatures by digitizing the agreement workflow."
+					]
+				}
+			],
+			"answers": [
+				{
+					"option": "Evaluating but no established timeline for adoption",
+					"value": 72
+				},
+				{
+					"option": "Actively pilot testing/experimenting",
+					"value": 144
+				},
+				{
+					"option": "Using on a limited basis for specific use cases",
+					"value": 216
+				},
+				{
+					"option": "Scaling out for all applicable use cases enterprise-wide",
+					"value": 288
+				},
+				{
+					"option": "Fully executed for all planned use cases",
+					"value": 360
+				},
+				{
+					"option": "No plans to adopt",
+					"value": 0
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		},
+		{
+			"number": 2,
+			"type": "checkbox",
+			"question": "In which channels have you automated the delivery and execution of digital agreements? Please select all that apply.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "Regardless of where your organization is in its digital agreement journey, enabling this capability across key customer touchpoints will amplify the return from your investment. Leverage your success in one channel as a case study for automating and digitizing your internal and customer-facing agreements across the entire enterprise. Enhancing these digital experiences across channels enables enterprises to be more efficient and effective."
+				}
+			],
+			"answers": [
+				{
+					"option": "Web (online, mobile)",
+					"value": 72
+				},
+				{
+					"option": "Mobile app",
+					"value": 72
+				},
+				{
+					"option": "In-person/branch",
+					"value": 72
+				},
+				{
+					"option": "Virtual branch",
+					"value": 72
+				},
+				{
+					"option": "Call center",
+					"value": 72
+				},
+				{
+					"option": "None of these",
+					"value": 0
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		},
+		{
+			"number": 3,
+			"type": "radio",
+			"question": "Are you currently using eSignatures in your agreement processes? Please select one response.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "Electronic signatures are an essential part of an enterprise digitization strategy. Among financial institutions (FIs) of all sizes, there is tremendous interest in removing paper from business processes and accelerating the digital transformation of the business. The COVID-19 pandemic has only further increased this interest in, and need for, electronic signature solutions. FIs adopting these solutions can offer more convenient and efficient digital experiences for both internal staff, customers and partners."
+				}
+			],
+			"answers": [
+				{
+					"option": "Evaluating but no established timeline for adoption",
+					"value": 72
+				},
+				{
+					"option": "Actively pilot testing/experimenting",
+					"value": 144
+				},
+				{
+					"option": "Using on a limited basis for specific use cases",
+					"value": 216
+				},
+				{
+					"option": "Scaling out for all applicable use cases enterprise-wide",
+					"value": 288
+				},
+				{
+					"option": "Fully executed for all planned use cases",
+					"value": 360
+				},
+				{
+					"option": "None of the above",
+					"value": 0
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		},
+		{
+			"number": 4,
+			"type": "radio",
+			"question": "How likely are you to switch eSignature vendors in the next 12 months? Please select one response.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "eSignatures help organizations remain competitive and keep business moving in today’s remote environment. As you assess your current and future eSignature needs, you should ask questions like"
+				},
+				{
+					"bulletPoints": [
+						"Are there overlapping and redundant solutions in use across my organization?",
+						"Are we paying above-market rates for our eSignature solution?",
+						"Does our current solution meet our eSignature adoption targets?",
+						"Can our current implementation scale for the future growth of our business (i.e., across channels and geographies)?"
+					]
+				},
+				{
+					"text": "A secure, reliable eSignature solution is key to success in the new normal."
+				}
+			],
+			"answers": [
+				{
+					"option": "Not applicable, not using eSignatures",
+					"value": 0
+				},
+				{
+					"option": "Definitely will switch",
+					"value": 0
+				},
+				{
+					"option": "Very likely",
+					"value": 0
+				},
+				{
+					"option": "Somewhat likely",
+					"value": 0
+				},
+				{
+					"option": "Not very likely",
+					"value": 0
+				},
+				{
+					"option": "Not at all likely",
+					"value": 0
+				},
+				{
+					"option": "Don’t know",
+					"value": 0
+				}
+			]
+		},
+		{
+			"number": 5,
+			"type": "checkbox",
+			"question": "For which of the following use cases is your organization utilizing eSignatures? Please select all that apply.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "Retail and commercial banks, credit unions, lenders, and many other financial services organizations in the banking industry have been adopting eSignatures for a variety of use cases. As digitization efforts mature, FIs are realizing the benefits in customer experience, compliance, efficiencies, and costs. As a result many FIs are expanding beyond early applications. They are now looking for ways to extend the benefits of signature software to every business line, channel, and area of the organization."
+				},
+				{
+					"text": "Many mid-size firms (69%) offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession. Given how the industry is changing and adapting, making it easier for employees to add new skills is also critical to the firm’s ongoing success."
+				},
+				{
+					"text": "Professional development is a significant focus for large firms as 100% offer tuition reimbursement or assistance for additional degrees or credentials. In today’s competitive and challenging business environment, more professionals are looking for new ways to provide value. Helping employees succeed in their professional development benefits not only the associate but their clients, the firm and the overall profession."
+				}
+			],
+			"marketoTrack": "aCTADPQuiz2018Q6ProfessionalDevelopment",
+			"answers": [
+				{
+					"option": "Not applicable, not using eSignatures",
+					"value": 0
+				},
+				{
+					"option": "Customer onboarding/account openings",
+					"value": 45
+				},
+				{
+					"option": "Ongoing customer service/account maintenance",
+					"value": 45
+				},
+				{
+					"option": "Hiring and employee onboarding",
+					"value": 45
+				},
+				{
+					"option": "Vendor contracting",
+					"value": 45
+				},
+				{
+					"option": "NDAs and other legal agreements",
+					"value": 45
+				},
+				{
+					"option": "Mortgage applications",
+					"value": 45
+				},
+				{
+					"option": "Consumer lending",
+					"value": 45
+				},
+				{
+					"option": "Notarization",
+					"value": 45
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		},
+		{
+			"number": 6,
+			"type": "checkbox",
+			"question": "Which methods are being used by your organization to verify a user's identity before they access and sign digital agreements? Please select all that apply.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "FIs need to pay special attention to the pro-biometrics sentiment now established among consumers. In response, they are increasingly modernizing their authentication systems by using biometric identification and, in particular, liveness detection and behavioral biometrics to reduce fraud and improve the user experience. Machine learning also enables risk assessment in real-time and triggers actions in order to stop fraud; all while increasing the level of your understanding of that user, to build trust and develop more accurate risk scoring. This also allows you to only interrupt the user when absolutely necessary, or when that person might expect or appreciate a visible signal of security (such as a biometric authentication prompt for a higher-risk transaction)."
+				}
+			],
+			"answers": [
+				{
+					"option": "Not applicable, not using eSignatures",
+					"value": 0
+				},
+				{
+					"option": "Facial biometrics",
+					"value": 40
+				},
+				{
+					"option": "ID document verification (e.g., driver's license, passport, etc.)",
+					"value": 40
+				},
+				{
+					"option": "One-time passcode (e.g., SMS)",
+					"value": 40
+				},
+				{
+					"option": "Knowledge-based authentication (e.g., credit bureau checks)",
+					"value": 40
+				},
+				{
+					"option": "Two-factor authentication",
+					"value": 40
+				},
+				{
+					"option": "PINS and passwords",
+					"value": 40
+				},
+				{
+					"option": "E-mail authentication",
+					"value": 40
+				},
+				{
+					"option": "Digital certificates/digital IDs",
+					"value": 40
+				},
+				{
+					"option": "We don’t ask users to authenticate before they access and sign digital agreements",
+					"value": 40
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		},
+		{
+			"number": 7,
+			"type": "radio",
+			"question": "How effective is your organization's digital agreement process at improving completion rates and reducing abandonment? Please select one response.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "It’s important to keep in mind that the more hoops an applicant or customer has to jump through when completing a transaction, the more likely they are to get frustrated and walk away. Each stage of the process that requires a manual or inconvenient task (such as printing documents, scanning, or presenting identity documents in-person), is a point of friction that contributes to a poor experience. Poor customer experiences lead to high abandonment rates as applicants look elsewhere."
+				}
+			],
+			"answers": [
+				{
+					"option": "Extremely effective",
+					"value": 360
+				},
+				{
+					"option": "Very effective",
+					"value": 288
+				},
+				{
+					"option": "Somewhat effective",
+					"value": 216
+				},
+				{
+					"option": "Not very effective",
+					"value": 144
+				},
+				{
+					"option": "Not at all effective",
+					"value": 72
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		},
+		{
+			"number": 8,
+			"type": "radio",
+			"question": "How effective is your organization's digital agreement process at ensuring compliance and non-repudiation? Please select one response.",
+			"weight": 1,
+			"takeaway": [
+				{
+					"text": "Repudiation and compliance risks are challenging enough to address when executing transactions on paper. If not done properly in the electronic world, these risks can be even greater. The risk of repudiation can be mitigated in your agreement process by ensuring that a person’s eSignature is permanently bound to the exact contents of the record at the time of signing. In addition, the process should mitigate compliance risk by enforcing regulatory requirements and proving that compliant processes are followed throughout a transaction. Digital audit trails can include evidence of compliance, a customer’s identity, or intent. If stored in a tamper-evident package, the evidence can help prove that the resulting agreement is legal, compliant, and enforceable if challenged.",
+					"moreText": "A well-designed process should embed specific controls to maintain compliance and non-repudiation throughout the process﹘it shouldn’t require a CX/security trade off."
+				}
+			],
+			"answers": [
+				{
+					"option": "Extremely effective",
+					"value": 360
+				},
+				{
+					"option": "Very effective",
+					"value": 288
+				},
+				{
+					"option": "Somewhat effective",
+					"value": 216
+				},
+				{
+					"option": "Not very effective",
+					"value": 144
+				},
+				{
+					"option": "Not at all effective",
+					"value": 72
+				},
+				{
+					"option": "Don’t know",
+					"value": 9999
+				}
+			]
+		}
+	]
 }
